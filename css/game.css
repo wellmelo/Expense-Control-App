@@ -1,0 +1,638 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 325px;
+    background-image: url('../images/wallpaper-dbz-wellmelo.png');
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+}
+
+.headPai {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    max-width: 1000px;
+    padding: 15px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+}
+
+.headLeft {
+    flex: 50;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.headLeftUm {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.headRight {
+    flex: 50;
+    display: flex;
+    justify-content: end !important;
+    align-items: center;
+}
+
+.headRightUm {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#myBtn2 {
+    padding: 3px 10px;
+    cursor: pointer;
+    background-color: brown;
+    color: #fff;
+    border-radius: 5px;
+    margin-left: 100px !important;
+}
+
+#myBtn2:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+.refresh {
+    padding: 3px 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+    background-color: #a52a2a;
+    color: #fff;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+#myBtn2,
+.refresh,
+.player,
+.timer-texto,
+.timer,
+#timerCombined,
+#timerCombined2 {
+    font-size: 1em;
+}
+.nick,
+.player,
+.timer-texto {
+    font-weight: 600;
+}
+.player {
+    max-width: 150px;
+}
+.nick,
+.timer-texto {
+    padding-right: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0px auto;
+}
+
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    background-color: #333;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-transition: all 0.4s ease;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #a52a2a;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+    backface-visibility: hidden;
+    -webkit-transition: all 0.4s ease;
+    -webkit-backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.face:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.back {
+    background-image: url('../images/back.png');
+    backface-visibility: hidden;
+}
+
+.reveal-card {
+    transform: rotateY(180deg);
+}
+
+.disabled-card {
+    filter: saturate(0);
+    opacity: 0.9;
+    cursor: auto;
+}
+
+button.refresh:disabled {
+    cursor: auto;
+    background-color: #ccc;
+}
+
+button.rankButton {
+    padding: 3px 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+    background-color: #a52a2a;
+    color: #fff;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+button.rankButton:disabled {
+    cursor: auto;
+    background-color: #ccc;
+}
+.goku img {
+    width: 100%;
+}
+.tabelaRankingList {
+    overflow: scroll;
+    overflow-x: overlay;
+    max-height: 360px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #a52a2a;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a52a2a;
+}
+
+/* Start Footer */
+
+.footer_container {
+    background-color: #1f1919;
+    width: 100%;
+}
+.footer_container_row {
+    max-width: 1000px;
+    min-width: 325px;
+    margin: auto;
+    display: flex;
+    min-height: 60px;
+    color: #ccc;
+    font-size: 0.8em;
+    padding: 10px;
+}
+.footer_container_row a {
+    color: #ccc;
+}
+.footer_left {
+    flex: 50;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer_left i {
+    padding-right: 3px;
+}
+
+.footer_left a {
+    text-decoration: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    text-align: center !important;
+    background-color: #a52a2a;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer_left a:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+/* BOTÃO SAIR DO JOGO */
+.footer_right {
+    flex: 50;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer_right a {
+    text-decoration: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center !important;
+}
+
+.footer_right a:hover {
+    animation: pulse2 1s infinite;
+    animation-timing-function: linear;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+.avisoRank img {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding-top: 5px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(165, 42, 42, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0);
+    }
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #myBtn2,
+    .refresh,
+    .player,
+    .timer-texto,
+    .timer,
+    #timerCombined,
+    #timerCombined2 {
+        font-size: 1em !important;
+    }
+
+    #myBtn2 {
+        margin-left: 15px !important;
+    }
+
+    .headRightUm {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* ESQUERDA NICK */
+    .headLeft {
+        flex: 55;
+    }
+
+    /* DIREITA TIMER */
+    .headRight {
+        flex: 45;
+    }
+
+    .modal {
+        padding-top: 100px;
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80% !important;
+        padding-top: 30px !important;
+    }
+
+    /* MODAL RANK */
+
+    .modal-content2 {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80% !important;
+        padding-top: 30px !important;
+    }
+
+    .footer_container_row {
+        padding: 10px !important;
+    }
+    .footer_left {
+        flex: 65;
+    }
+    .footer_right {
+        flex: 35;
+    }
+}
+
+@media (max-width: 590px) {
+    body {
+        background-color: #1f1919 !important;
+    }
+    .headPai {
+        display: flex;
+        padding: 7px;
+        font-size: 0.8em;
+    }
+
+    .footer-sair {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #myBtn2,
+    .refresh,
+    .player,
+    .timer-texto,
+    .timer,
+    #timerCombined,
+    #timerCombined2 {
+        font-size: 1em !important;
+    }
+
+    #myBtn2 {
+        margin-left: 0px !important;
+    }
+
+    .modal2 {
+        padding-top: 110px !important;
+    }
+
+    /* ESQUERDA NICK */
+    .headLeft {
+        flex: 55;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .headLeftUm {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .headLeftDois {
+        margin-top: 5px;
+    }
+
+    /* DIREITA TIMER */
+    .headRight {
+        flex: 45;
+        display: flex;
+        flex-direction: column;
+    }
+    .headRightUm {
+        display: flex;
+        justify-content: space-around;
+    }
+    .headRightDois {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 5px;
+    }
+
+    #timerCombined {
+        font-size: 12px !important;
+    }
+
+    .refresh {
+        margin-right: 17px;
+    }
+
+    .tabelaRankingList {
+        font-size: 13px !important;
+    }
+
+    .footer_container_row {
+        width: 100%;
+        display: flex;
+        color: #ccc;
+        font-size: 0.8em;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 10px;
+    }
+    .footer_left {
+        flex: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0 0 0;
+    }
+    .footer_left a {
+        padding: 2px;
+    }
+    .footer_right {
+        flex: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+    }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    min-width: 325px;
+    border: 1px solid #888;
+    width: 40%;
+
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.modal-content P {
+    max-width: 300px;
+    margin: auto;
+}
+
+.modal-content img {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+/* The Close Button */
+.close {
+    right: 10px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Start style modal 2 */
+.modal2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 85px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content Rank */
+.modal-content2 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    min-width: 325px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.modal-content2 hr {
+    width: 100%;
+    border-top: 1px solid red;
+    margin-bottom: 10px;
+}
+
+/* The Close Button */
+.close2 {
+    right: 10px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.close2:hover,
+.close2:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

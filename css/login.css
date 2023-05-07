@@ -1,0 +1,261 @@
+/** FIM CSS BOTAO **/
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 325px;
+    background-image: url('../images/wallpaper-dbz-wellmelo.png');
+    background-size: cover;
+    height: 91vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#nameError {
+    color: #a52a2a;
+    display: none;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.login-form {
+    background: linear-gradient(-45deg, #6cc7fc, #f88787, #40ccc5, #06c283);
+    background-size: 400% 400%;
+    opacity: 0.9;
+    animation: gradient 5s ease infinite;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 40px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #333;
+}
+
+.login_header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.login_header img {
+    width: 230px;
+}
+
+.login-form h1 {
+    color: #222;
+    font-size: 1.5em;
+    padding-top: 10px;
+}
+
+.login_input {
+    border: 2px solid #222;
+    border-radius: 8px;
+    color: #222;
+    font-size: 1em;
+    margin-bottom: 15px;
+    max-width: 250px;
+    outline: none;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.login_button {
+    background-color: #a52a2a;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    max-width: 250px;
+    width: 100%;
+}
+
+.login_button:disabled {
+    background-color: #eee;
+    cursor: auto;
+    color: #aaa;
+    border: 1px solid #e8e8e8;
+}
+
+/* Start Footer */
+
+.footer_container {
+    background-color: #1f1919;
+    width: 100%;
+    height: 9vh;
+}
+.footer_container_row {
+    max-width: 1000px;
+    min-width: 325px;
+    margin: auto;
+    display: flex;
+    min-height: 60px;
+    color: #ccc;
+    font-size: 0.8em;
+}
+.footer_container_row a {
+    color: #ccc;
+}
+.footer_left {
+    flex: 50;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer_left i {
+    padding-right: 3px;
+}
+
+.footer_left a {
+    text-decoration: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    text-align: center !important;
+    background-color: #a52a2a;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer_left a:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+/* BOTÃO SAIR DO JOGO */
+.footer_right {
+    flex: 50;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer_right a {
+    text-decoration: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center !important;
+}
+
+.footer_right a:hover {
+    animation: pulse2 1s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(165, 42, 42, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0);
+    }
+}
+
+@media (max-width: 800px) {
+    .footer_container_row {
+        padding: 10px !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .footer_container_row {
+        padding: 10px !important;
+    }
+    .footer_left {
+        flex: 65;
+    }
+    .footer_right {
+        flex: 35;
+    }
+}
+
+@media (max-width: 590px) {
+    body {
+        background-color: #1f1919 !important;
+    }
+    main {
+        height: 85vh;
+    }
+    .footer_container_row {
+        width: 100%;
+        display: flex;
+        color: #ccc;
+        font-size: 0.8em;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 10px;
+    }
+    .footer_left {
+        flex: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0 0 0;
+    }
+    .footer_left a {
+        padding: 2px;
+    }
+    .footer_right {
+        flex: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+    }
+}
