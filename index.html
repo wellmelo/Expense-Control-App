@@ -39,12 +39,15 @@
             <!--<input type="text" name="name" id="name" onchange="validateFields" placeholder="You nick"
                 class="login_input">-->
 
-            <input type="email" name="email" id="email" oninput="validateFields()" placeholder="You@email.com"
+            <input type="email" name="email" id="email" oninput="onChangeEmail()" placeholder="You@email.com"
                 class="login_input">
+            <div class="error" id="email-required-error">Email é obrigatório!</div>
+            <div class="error" id="email-invalid-error">Email é inválido!</div>
 
-            <p id="password-message" class="hide_password">Minimum 6 characters.</p>
-            <input type="password" name="password" id="password" oninput="validateFields()"
+            <!--<p id="password-message" class="hide_password"><span>*</span>Minimum 6 characters.</p>-->
+            <input type="password" name="password" id="password" oninput="onChangePassword()"
                 onfocus="showPasswordMessage()" placeholder="Password" class="login_input">
+            <div class="error" id="password-required-error">Senha obrigatório. Min. 6 caracteres.</div>
 
             <button type="button" class="recover_button" id="recover-password-button" disabled>
                 Recover password

@@ -78,7 +78,7 @@ main {
     border-radius: 8px;
     color: #222;
     font-size: 1em;
-    margin-bottom: 15px;
+    margin-top: 10px;
     max-width: 250px;
     outline: none;
     padding: 10px 15px;
@@ -119,10 +119,11 @@ main {
     margin-bottom: 10px;
     padding-top: 10px;
     cursor: pointer;
+    color: #000;
 }
 
 button:disabled {
-    opacity: 0.4;
+    opacity: 0.7;
     cursor: auto;
 }
 
@@ -130,12 +131,28 @@ button:enabled {
     opacity: 1;
     cursor: pointer;
 }
+
+/*
 .hide_password {
     display: none;
 }
 p#password-message {
     font-size: 13px;
-    padding-bottom: 3px;
+    padding-top: 5px;
+    margin-bottom: -10px;
+}
+p#password-message span {
+    color: #a52a2a;
+}*/
+.error {
+    font-size: 13px;
+    color: #fff;
+    background-color: #a52a2a;
+    opacity: 0.8;
+    border-radius: 5px;
+    margin: 1px 0px;
+    padding: 1px 10px;
+    display: none;
 }
 /*
 button:disabled {
