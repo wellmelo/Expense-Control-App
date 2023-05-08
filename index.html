@@ -11,7 +11,8 @@
     <meta property="og:title" content="Memory Game - Dragon Ball Z" />
     <meta property="og:description"
         content="Memory game with Dragon Ball Z theme, have fun and share with your friends!" />
-    <meta property="og:image" itemprop="image" content="/images/memory-game-dbz-wellmelo.jpg" />
+    <meta property="og:image" itemprop="image"
+        content="https://memorygame.wellmelo.com/images/memory-game-dbz-wellmelo.jpg" />
     <meta property="og:image:alt" content="Memory Game - Dragon Ball Z" />
     <meta property="og:site_name" content="Well Melo - Desenvolvedor Web" />
 
@@ -33,10 +34,12 @@
 
             <div class="login_header">
                 <img src="./images/dragonball-z-logo.png" alt="Dragon Ball Z logo">
-                <h1>Memory Game DBZ DB BORA!</h1>
+                <h1>Memory Game DBZ</h1>
             </div>
             <span id="nameError">Maximum of 13 characters allowed.</span>
-            <input type="text" placeholder="YOU NICK" class="login_input" id="nameInput">
+            <input type="text" name="name" id="name" placeholder="You nick" class="login_input">
+            <input type="email" name="email" id="email" placeholder="Email" class="login_input">
+            <input type="password" name="password" id="password" placeholder="Password" class="login_input">
 
 
             <button type="submit" class="login_button" disabled><i class="fa fa-gamepad" aria-hidden="true"></i> PLAY
@@ -73,5 +76,29 @@
         gtag('config', 'G-3PXDVS933Z');
     </script>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAOnEuCWHOlhwcpZnEHLb1GwPTwglekSm0",
+        authDomain: "memory-game-3ee91.firebaseapp.com",
+        databaseURL: "https://memory-game-3ee91-default-rtdb.firebaseio.com",
+        projectId: "memory-game-3ee91",
+        storageBucket: "memory-game-3ee91.appspot.com",
+        messagingSenderId: "857502665856",
+        appId: "1:857502665856:web:de55e66b7c320e875eea65",
+        measurementId: "G-0E7JB0TLBR"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    console.log('antes');
+    firebase.auth().signInWithEmailAndPassword("wellingtonmeloweb@gmail.com", "123456").then(response => {
+        console.log('success', response)
+    }).catch(error => {
+        console.log('error', error)
+    });
+    console.log('depois')
+</script>
 
 </html>

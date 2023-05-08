@@ -149,7 +149,7 @@ function pauseClappingAudio() {
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
-    if (disabledCards.length === 20) {
+    if (disabledCards.length === 2) {
         clearInterval(this.loop);
 
         // Salva o tempo no localStorage

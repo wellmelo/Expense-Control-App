@@ -2,14 +2,14 @@ const input = document.querySelector('.login_input');
 const button = document.querySelector('.login_button');
 const form = document.querySelector('.login-form');
 
-const nameInput = document.getElementById('nameInput');
+const email = document.getElementById('email');
 const nameError = document.getElementById('nameError');
 
 // TUDO OK
-nameInput.addEventListener('input', function () {
-    if (nameInput.value.length > 13) {
+email.addEventListener('input', function () {
+    if (email.value.length > 13) {
         nameError.style.display = 'block';
-        nameInput.value = nameInput.value.slice(0, 13);
+        email.value = email.value.slice(0, 13);
     } else {
         nameError.style.display = 'none';
     }
