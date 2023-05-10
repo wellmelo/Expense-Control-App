@@ -15,7 +15,7 @@ const closeModalRank = document.querySelector('.close2');
 const closeModalEndGame = document.querySelector('.close');
 
 // Adiciona audio de aplusos no final do game, através da função checkEndGame.
-const clapping = new Audio('../audio/clapping.mp3');
+const clapping = new Audio('/assets/audio/clapping.mp3');
 
 function pauseClappingAudio() {
     clapping.pause();
@@ -23,12 +23,12 @@ function pauseClappingAudio() {
 
 // Adiciona Audio no Hover do Botao Ranking
 closeModalEndGame.addEventListener('mouseover', () => {
-    const modalAudioHover = new Audio('../audio/hover.mp3');
+    const modalAudioHover = new Audio('/assets/audio/hover.mp3');
     modalAudioHover.play();
 });
 // Adiciona Audio no Click do Botao Ranking
 closeModalEndGame.addEventListener('click', () => {
-    const modalAudioClick = new Audio('../audio/exit.mp3');
+    const modalAudioClick = new Audio('/assets/audio/exit.mp3');
     modalAudioClick.play();
 });
 
@@ -71,39 +71,39 @@ close2.onclick = function () {
 window.onclick = function (event) {
     if (event.target == modal2) {
         modal2.style.display = 'none';
-        const modal2ClickAudio = new Audio('../audio/exit.mp3');
+        const modal2ClickAudio = new Audio('/assets/audio/exit.mp3');
         modal2ClickAudio.play();
     }
 };
 
 // Adiciona Audio no evento Hover do Botao Ranking
 btn2.addEventListener('mouseover', () => {
-    const modal2AudioHover = new Audio('../audio/soundhover.mp3');
+    const modal2AudioHover = new Audio('/assets/audio/soundhover.mp3');
     modal2AudioHover.play();
 });
 // Adiciona Audio no evento Click do Botao Ranking
 btn2.addEventListener('click', () => {
-    const modal2ClickAudio = new Audio('../audio/click.mp3');
+    const modal2ClickAudio = new Audio('/assets/audio/click.mp3');
     modal2ClickAudio.play();
 });
 // Adiciona Audio no evento Hover do Botao Refresh/Play Again
 refresh.addEventListener('mouseover', () => {
-    const RefreshAudioHover = new Audio('../audio/soundhover.mp3');
+    const RefreshAudioHover = new Audio('/assets/audio/soundhover.mp3');
     RefreshAudioHover.play();
 });
 // Adiciona Audio no evento Hover do Botao Refresh/Play Again do Modal Rankin
 rankButton.addEventListener('mouseover', () => {
-    const RnkBtnModalAudioHover = new Audio('../audio/soundhover.mp3');
+    const RnkBtnModalAudioHover = new Audio('/assets/audio/soundhover.mp3');
     RnkBtnModalAudioHover.play();
 });
 // Adiciona Audio no evento Hover no close do modal Ranking
 closeModalRank.addEventListener('mouseover', () => {
-    const modalcloseAudioHover = new Audio('../audio/soundhover.mp3');
+    const modalcloseAudioHover = new Audio('/assets/audio/soundhover.mp3');
     modalcloseAudioHover.play();
 });
 // Adiciona Audio no evento Click no close do modal Ranking
 closeModalRank.addEventListener('click', () => {
-    const modalCloseClickAudio = new Audio('../audio/exit.mp3');
+    const modalCloseClickAudio = new Audio('/assets/audio/exit.mp3');
     modalCloseClickAudio.play();
 });
 
@@ -219,7 +219,7 @@ const checkCards = () => {
         firstCard = '';
         secondCard = '';
 
-        const achouPar = new Audio('../audio/showcard.mp3');
+        const achouPar = new Audio('/assets/audio/showcard.mp3');
         achouPar.play();
 
         checkEndGame();
@@ -231,7 +231,7 @@ const checkCards = () => {
             firstCard = '';
             secondCard = '';
 
-            const errouPar = new Audio('../audio/exit.mp3');
+            const errouPar = new Audio('/assets/audio/exit.mp3');
             errouPar.play();
         }, 500);
     }
@@ -262,20 +262,20 @@ const createCard = (character) => {
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
 
-    front.style.backgroundImage = `url('../images/${character}.png')`;
+    front.style.backgroundImage = `url('/assets/images/${character}.png')`;
 
     card.appendChild(front);
     card.appendChild(back);
 
     // adiciona audio ao evento click na class card
     card.addEventListener('click', () => {
-        const cardClickAudio = new Audio('../audio/click.mp3');
+        const cardClickAudio = new Audio('/assets/audio/click.mp3');
         cardClickAudio.play();
     });
 
     // adiciona audio ao evento hover na class card
     card.addEventListener('mouseover', () => {
-        const cardAudioHover = new Audio('../audio/hover.mp3');
+        const cardAudioHover = new Audio('/assets/audio/hover.mp3');
         cardAudioHover.play();
     });
 
@@ -291,7 +291,7 @@ const createCard = (character) => {
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
 
-    front.style.backgroundImage = `url('../images/${character}.png')`;
+    front.style.backgroundImage = `url('/assets/images/${character}.png')`;
 
     card.appendChild(front);
     card.appendChild(back);

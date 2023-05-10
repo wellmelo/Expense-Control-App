@@ -12,19 +12,18 @@
     <meta property="og:description"
         content="Memory game with Dragon Ball Z theme, have fun and share with your friends!" />
     <meta property="og:image" itemprop="image"
-        content="https://memorygame.wellmelo.com/images/memory-game-dbz-wellmelo.jpg" />
+        content="/assets/images/memory-game-dbz-wellmelo.jpg" />
     <meta property="og:image:alt" content="Memory Game - Dragon Ball Z" />
     <meta property="og:site_name" content="Well Melo - Desenvolvedor Web" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
     <link rel="manifest" href="/images/site.webmanifest">
 
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/game.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/game.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script defer src="../js/game.js"></script>
 
 </head>
 
@@ -58,6 +57,11 @@
             </div>
         </header>
 
+        <div class="container-list">
+            <ol id="transactions"></ol>
+            <button class="fab fixed bottom right">+</button>
+        </div>
+
         <div class="grid"></div>
 
         <!-- Trigger/Open The Modal -->
@@ -75,7 +79,7 @@
                     <b><span id="timerCombined2">00:00</span></b>
                     time!
                 </p>
-                <img src="../images/gif_clapping.gif" alt="Goku Win!" class="responsive">
+                <img src="/assets/images/gif_clapping.gif" alt="Goku Win!" class="responsive">
                 <!--<button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button> -->
             </div>
         </div>
@@ -91,7 +95,7 @@
 
                 <div class="avisoRank">
                     <b>Rank is enabled</b> after finding all the cards.
-                    <img src="../images/goku.gif" alt="Goku!" class="responsive">
+                    <img src="/assets/images/goku.gif" alt="Goku!" class="responsive">
                 </div>
 
                 <div class="tabelaRankingList">
@@ -131,19 +135,20 @@
                     target="_blank" data-action="share/whatsapp/share">
                     <i class="fa fa-whatsapp"></i> Share on Whatsapp
                 </a>
-                <a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i> Exit game</a>
+                <button type="button" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Exit game</button>
             </div>
         </div>
     </footer>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PXDVS933Z"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-3PXDVS933Z');
-    </script>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+
+<script src="/assets/js/firebase-init.js"></script>
+<script src="/assets/js/auth-guard.js"></script>
+<script src="/assets/js/loading.js"></script>
+<script src="/assets/js/db-game.js"></script>
+<script src="/assets/js/game.js"></script>
 
 </html>

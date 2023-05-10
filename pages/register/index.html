@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory Game DBZ | Well Melo</title>
+    <title>Memory Game DBZ | Home Page</title>
 
     <meta property="og:url" content="https://memorygame.wellmelo.com" />
     <meta property="og:type" content="website" />
@@ -16,9 +16,9 @@
     <meta property="og:image:alt" content="Memory Game - Dragon Ball Z" />
     <meta property="og:site_name" content="Well Melo - Desenvolvedor Web" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets//images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets//images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets//images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
     <link rel="manifest" href="/images/site.webmanifest">
 
     <link rel="stylesheet" href="/assets/css/reset.css">
@@ -33,35 +33,30 @@
 
             <div class="login_header">
                 <img src="/assets/images/dragonball-z-logo.png" alt="Dragon Ball Z logo">
-                <h1>Memory Game DBZ</h1>
+                <h1>Memory Game DBZ1</h1>
             </div>
 
-            <!--<input type="text" name="name" id="name" onchange="validateFields" placeholder="You nick"
-                class="login_input">-->
+            <!-- <input type="text" name="name" id="name" placeholder="Your nick" class="login_input"> -->
+            <!-- <input type="text" name="name" id="name" placeholder="Your name" class="login_input"> -->
 
-            <input type="email" name="email" id="email" oninput="onChangeEmail()" placeholder="You@email.com"
+            <input type="email" name="email" id="email" placeholder="You@email.com" oninput="onChangeEmail()"
                 class="login_input">
-            <div class="error" id="email-required-error">Email obrigatório!</div>
-            <div class="error" id="email-invalid-error">Email é inválido!</div>
+            <div class="error" id="email-required-error">Email obrigatório.</div>
+            <div class="error" id="email-invalid-error">Email é inválido.</div>
 
-            <!--<p id="password-message" class="hide_password"><span>*</span>Minimum 6 characters.</p>-->
-            <input type="password" name="password" id="password" oninput="onChangePassword()"
-                onfocus="showPasswordMessage()" placeholder="Password" class="login_input">
-            <div class="error" id="password-required-error">Senha obrigatório. Min. 6 caracteres.</div>
+            <input type="password" name="password" id="password" placeholder="Password" oninput="onChanvePassword()"
+                class="login_input">
+            <div class="error" id="password-required-error">Senha obrigatório.</div>
+            <div class="error" id="password-min-length-error">Min. 6 caracteres.</div>
 
-            <button type="button" class="recover_button" id="recover-password-button" disabled
-                onclick="recoverPassword()">
-                Recover password
-            </button>
+            <input type="password" name="password" id="confirmPassword" placeholder="Confirm password" oninput="onChangeConfirmPassword()"
+                class="login_input">
+            <div class="error" id="password-doesnt-match-error">Senhas devem ser iguais!</div>
 
-            <button type="button" class="login_button" id="login-button" disabled="true" onclick="login()">
-                Play Now!
-            </button>
+            <button type="button" class="register_button" disabled="true" id="register-button" onclick="register()">Register</button>
 
-            <button type="button" class="register_button_pg_login" onclick="register()">Register</button>
-
+            <button type="button" class="login_button_pg_register" onclick="login()">Login</button>
         </form>
-
     </main>
     <footer class="footer_container">
         <div class="footer_container_row centralize">
@@ -86,8 +81,9 @@
 
 <script src="/assets/js/firebase-init.js"></script>
 
-<script src="/assets/js/index.js"></script>
+<script src="/assets/js/register.js"></script>
 <script src="/assets/js/loading.js"></script>
 <script src="/assets/js/validations.js"></script>
+
 
 </html>
