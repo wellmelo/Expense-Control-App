@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    border: none;
+    font-family: "Rubik", sans-serif;
+}
+
+/** FIM CSS BOTAO **/
+body {
+    position: relative;
+}
+
+.centralize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    background: rgba(0, 0, 0, 0.7);
+    color: red;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.loading label {
+    background-color: rgba(00, 00, 00, 0.8);
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #a52a2a;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a52a2a;
+}
+
+#nameError {
+    color: #a52a2a;
+    display: none;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.error {
+    font-size: 13px;
+    color: #fff;
+    background-color: #a52a2a;
+    opacity: 0.8;
+    border-radius: 5px;
+    margin: 1px 0px;
+    padding: 1px 10px;
+    display: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(165, 42, 42, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0);
+    }
+}
+
+/* Start Footer */
+.footer_container {
+    background-color: #1f1919;
+    width: 100%;
+    height: 10vh;
+}
+.footer_container_row {
+    max-width: 1000px;
+    min-width: 325px;
+    margin: auto;
+    display: flex;
+    min-height: 60px;
+    color: #ccc;
+    font-size: 0.8em;
+    padding: 10px;
+}
+.footer_container_row a {
+    color: #ccc;
+}
+.footer_left {
+    flex: 50;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer_left i {
+    padding-right: 3px;
+}
+
+.footer_left a {
+    text-decoration: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    text-align: center !important;
+    background-color: #a52a2a;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer_left a:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+/* BOTÃO SAIR DO JOGO */
+.footer_right {
+    flex: 50;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer_right button, .footer_right a{
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center !important;
+    cursor: pointer;
+}
+
+.footer_right button:hover,.footer_right a:hover {
+    animation: pulse2 1s infinite;
+    animation-timing-function: linear;
+}
+
+@media (max-width: 800px) {
+    .footer_container_row {
+        padding: 10px !important;
+    }
+    .footer_left {
+        flex: 65;
+    }
+    .footer_right {
+        flex: 35;
+    }
+}
+
+@media (max-width: 590px) {
+    .footer_container {
+        height: 15vh;
+    }
+
+    .footer_container_row {
+        width: 100%;
+        display: flex;
+        color: #ccc;
+        font-size: 0.8em;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 10px;
+    }
+    .footer-sair {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer_left {
+        flex: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0 0 0;
+    }
+    .footer_left a {
+        padding: 2px;
+    }
+    .footer_right {
+        flex: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+    }
+}

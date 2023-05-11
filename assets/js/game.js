@@ -76,6 +76,33 @@ window.onclick = function (event) {
     }
 };
 
+// Inicio Modal Add Transação
+var modalAddTransaction = document.getElementById('ModalAdd');
+// Chama o botão que abre o modal
+var btnAdd = document.getElementById('btnAdd');
+// Chama class que fecha o modal
+var closeModalAdd = document.getElementsByClassName('closeModalAdd')[0];
+var cancelBtn = document.getElementsByClassName("login_button_cancel")[0];
+// Quando o usuário clica no botão, abrir o modal.
+btnAdd.onclick = function () {
+    modalAddTransaction.style.display = 'block';
+};
+// Quando o usuário clicar no elemento <div class> (x), fecha o modal.
+closeModalAdd.onclick = function () {
+    modalAddTransaction.style.display = 'none';
+};
+cancelBtn.onclick = function() {
+    modalAddTransaction.style.display = "none";
+}
+// Quando o usuário clica em qualquer lugar fora do modal, fecha o modal.
+window.onclick = function (event) {
+    if (event.target == modalAddTransaction) {
+        modalAddTransaction.style.display = 'none';
+        const modalAddTransactionClickAudio = new Audio('/assets/audio/exit.mp3');
+        modalAddTransactionClickAudio.play();
+    }
+};
+
 // Adiciona Audio no evento Hover do Botao Ranking
 btn2.addEventListener('mouseover', () => {
     const modal2AudioHover = new Audio('/assets/audio/soundhover.mp3');

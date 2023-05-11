@@ -11,8 +11,7 @@
     <meta property="og:title" content="Memory Game - Dragon Ball Z" />
     <meta property="og:description"
         content="Memory game with Dragon Ball Z theme, have fun and share with your friends!" />
-    <meta property="og:image" itemprop="image"
-        content="/assets/images/memory-game-dbz-wellmelo.jpg" />
+    <meta property="og:image" itemprop="image" content="/assets/images/memory-game-dbz-wellmelo.jpg" />
     <meta property="og:image:alt" content="Memory Game - Dragon Ball Z" />
     <meta property="og:site_name" content="Well Melo - Desenvolvedor Web" />
 
@@ -21,8 +20,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
     <link rel="manifest" href="/images/site.webmanifest">
 
-    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/game.css">
+    <link rel="stylesheet" href="/assets/css/transaction.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -57,12 +57,84 @@
             </div>
         </header>
 
-        <div class="container-list">
-            <ol id="transactions"></ol>
-            <button class="fab fixed bottom right">+</button>
+        <!-- Trigger/Open Modal -> <button class="fab fixed bottom right" id="btnAddTransaction">+</button> -->
+        <!-- The Modal Add Transação -->
+        <div id="ModalAdd" class="btnAddTransaction">
+            <!-- Modal content -->
+            <div class="contentModalAdd">
+                <div class="closeModalAdd">&times;</div>
+                <span><b>Add</b> new <b>Transaction</b>
+                    <hr>
+                </span>
+
+                <form class="login-form">
+
+                    <div class="form-field">
+                        <div><label>Transações <span>*</span></label></div>
+                        <input type="radio" name="type" checked id="expense">
+                        <label for="expense">Despesa</label>
+                        <input type="radio" name="type" id="indice">
+                        <label for="indice">Receita</label>
+                    </div>
+
+                    <div class="form-field">
+                        <div><label>Data da transação <span>*</span></label></div>
+                        <input type="date" onchange="onChangeDate()" id="date">
+                        <div class="error" id="date-required-error">Data obrigatório/inválida.</div>
+                    </div>
+
+                    <div class="form-field">
+                        <div><label>Moeda <span>*</span></label></div>
+                        <select>
+                            <option value="BRL" selected>Real</option>
+                            <option value="USD">Dólar</option>
+                            <option value="EUR">Euro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <div><label>Valor <span>*</span></label></div>
+                        <input type="number" placeholder="Exemplo: 500" onchange="onChangeValue()" id="value">
+                        <div class="error" id="value-required-error">Valor é obrigatório.</div>
+                        <div class="error" id="value-less-or-equal-to-error">Valor deve ser maior que zero.</div>
+                    </div>
+
+                    <div class="form-field">
+                        <div><label>Tipo de transação:</label></div>
+                        <select onchange="onChangeTransactionType()" id="transaction-type">
+                            <option value="">- Selecione tipo de transação -</option>
+                            <option>Aluguel</option>
+                            <option>Serviços</option>
+                            <option>Alimentação</option>
+                            <option>Contas</option>
+                        </select>
+                        <div class="error" id="transaction-type-required-error">
+                            Tipo de transação obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <div><label>Descrição:</label></div>
+                        <input type="text" placeholder="Digite uma descrição...">
+                    </div>
+
+                    <div class="form-field-button">
+                        <button type="button" class="login_button" disabled id="save-button">Salvar</button>
+                        <button type="button" class="login_button_cancel">Cancelar</button>
+                    </div>
+
+                </form>
+
+
+            </div>
         </div>
 
-        <div class="grid"></div>
+        <div class="container-list">
+            <ol id="transactions"></ol>
+            <button class="fab fixed bottom right" id="btnAdd" onclick="newTransaction()">+</button>
+        </div>
+
+        <!--<div class="grid"></div>-->
 
         <!-- Trigger/Open The Modal -->
         <button id="myBtn"></button>
@@ -135,7 +207,8 @@
                     target="_blank" data-action="share/whatsapp/share">
                     <i class="fa fa-whatsapp"></i> Share on Whatsapp
                 </a>
-                <button type="button" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Exit game</button>
+                <button type="button" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Exit
+                    game</button>
             </div>
         </div>
     </footer>
@@ -149,6 +222,7 @@
 <script src="/assets/js/auth-guard.js"></script>
 <script src="/assets/js/loading.js"></script>
 <script src="/assets/js/db-game.js"></script>
+<script src="/assets/js/transaction.js"></script>
 <script src="/assets/js/game.js"></script>
 
 </html>

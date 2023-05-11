@@ -1,43 +1,4 @@
-/** FIM CSS BOTAO **/
-body {
-    position: relative;
-}
 
-main {
-    flex-direction: column;
-    width: 100%;
-    min-width: 325px;
-    background-image: url('../images/wallpaper-dbz-wellmelo.png');
-    background-size: cover;
-    height: 90vh;
-    padding: 0px;
-    margin: 0px;
-}
-
-.centralize {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loading {
-    background: rgba(0, 0, 0, 0.7);
-    color: red;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    margin: 0;
-    padding: 0;
-}
-
-.loading label {
-    background-color: rgba(00, 00, 00, 0.8);
-    border-radius: 100px;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-}
 
 @keyframes gradient {
     0% {
@@ -51,17 +12,17 @@ main {
     }
 }
 
-#nameError {
-    color: #a52a2a;
-    display: none;
-    padding: 2px 5px;
-    margin-bottom: 5px;
-    font-size: 0.8em;
-    text-align: center;
-    background-color: #fff;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 325px;
+    background-image: url('../images/wallpaper-dbz-wellmelo.png');
+    background-size: cover;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
 }
 
 .login-form {
@@ -183,185 +144,4 @@ button:disabled {
 button:enabled {
     opacity: 1;
     cursor: pointer;
-}
-
-/*
-.hide_password {
-    display: none;
-}
-p#password-message {
-    font-size: 13px;
-    padding-top: 5px;
-    margin-bottom: -10px;
-}
-p#password-message span {
-    color: #a52a2a;
-}*/
-.error {
-    font-size: 13px;
-    color: #fff;
-    background-color: #a52a2a;
-    opacity: 0.8;
-    border-radius: 5px;
-    margin: 1px 0px;
-    padding: 1px 10px;
-    display: none;
-}
-
-/*
-button:disabled {
-    opacity: 0.7;
-    color: blue;
-}
-button:enabled {
-    opacity: 0.7;
-    color: palevioletred;
-}*/
-
-/* Start Footer */
-
-.footer_container {
-    background-color: #1f1919;
-    width: 100%;
-    height: 10vh;
-}
-.footer_container_row {
-    max-width: 1000px;
-    min-width: 325px;
-    margin: auto;
-    min-height: 60px;
-    color: #ccc;
-    font-size: 0.8em;
-}
-.footer_container_row a {
-    color: #ccc;
-}
-.footer_left {
-    flex: 50;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.footer_left i {
-    padding-right: 3px;
-}
-
-.footer_left a {
-    text-decoration: none;
-    padding: 3px 10px;
-    border-radius: 5px;
-    text-align: center !important;
-    background-color: #a52a2a;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.footer_left a:hover {
-    animation: pulse 1s infinite;
-    animation-timing-function: linear;
-}
-
-/* BOTÃO SAIR DO JOGO */
-.footer_right {
-    flex: 50;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.footer_right a {
-    text-decoration: none;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    padding: 0 10px;
-    text-align: center !important;
-}
-
-.footer_right a:hover {
-    animation: pulse2 1s infinite;
-    animation-timing-function: linear;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-    }
-
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-    }
-
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
-@keyframes pulse2 {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0.7);
-    }
-
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(165, 42, 42, 0);
-    }
-
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0);
-    }
-}
-
-@media (max-width: 800px) {
-    .main {
-        padding: 0px;
-        margin: 0px;
-    }
-    .footer_container_row {
-        padding: 10px !important;
-    }
-    .footer_left {
-        flex: 65;
-    }
-    .footer_right {
-        flex: 35;
-    }
-}
-
-@media (max-width: 590px) {
-    body {
-        background-color: #1f1919 !important;
-    }
-    main {
-        height: 84vh;
-        margin: 0px;
-        padding: 0px;
-    }
-    .footer_container {
-        height: 15vh;
-    }
-    .footer_container_row {
-        width: 100%;
-        display: flex;
-        color: #ccc;
-        font-size: 0.8em;
-        flex-direction: column;
-        align-items: center;
-    }
-    .footer_left {
-        flex: 100;
-        padding: 15px 0 0 0;
-    }
-    .footer_left a {
-        padding: 2px;
-    }
-    .footer_right {
-        padding: 15px 0;
-    }
 }

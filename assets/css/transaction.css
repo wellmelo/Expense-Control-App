@@ -1,0 +1,234 @@
+/* Start style modal Add Transaction */
+.btnAddTransaction {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    padding-top: 40px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content Rank */
+.contentModalAdd {
+    width: 40%;
+    margin: auto;
+    min-width: 500px;
+    background-color: #fefefe;
+    padding: 20px 0px;
+    border: 1px solid #888;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.contentModalAdd hr {
+    width: 100%;
+    border-top: 1px solid red;
+    margin-bottom: 10px;
+}
+
+/* The Close Button */
+.closeModalAdd {
+    right: 10px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.closeModalAdd:hover,
+.closeModalAdd:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Início Form Transaction */
+.login-form {
+    width: 80%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.login_input {
+    border: 1px solid #222;
+    border-radius: 8px;
+    color: #222;
+    font-size: 1em;
+    margin-top: 10px;
+    max-width: 250px;
+    outline: none;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.form-field{
+    margin-bottom: 8px;
+    text-align: left;
+    padding: 0px 5px;
+}
+.form-field div{
+    margin-bottom: 3px;
+}
+.form-field input,.form-field button,.form-field select {
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    width: -webkit-fill-available;
+}
+.form-field input[type="radio"] {
+    width: auto;
+}
+
+.form-field span{
+    color: #a52a2a;
+}
+
+.form-field-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login_button {
+    background-color: #a52a2a;
+    border: 2px solid #a52a2a;
+    padding: 10px 10px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    width: 100%;
+    margin: 10px 5px;
+    flex: 60;
+}
+
+.login_button_cancel {
+    flex:40;
+    background-color: #e8e8e8;
+    border: 1px solid #888;
+    border-radius: 8px;
+    color: #333;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    width: 100%;
+    margin: 10px 5px;
+}
+
+.login_button_pg_register {
+    background-color: transparent;
+    border: 1px solid #a52a2a;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #a52a2a;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    max-width: 250px;
+    width: 100%;
+}
+
+.register_button {
+    background-color: #a52a2a;
+    border: 2px solid #a52a2a;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    max-width: 250px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.register_button_pg_login {
+    background-color: transparent;
+    border: 1px solid #a52a2a;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #a52a2a;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    max-width: 250px;
+    width: 100%;
+}
+
+.recover_button {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+    color: #000;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: auto;
+}
+
+button:enabled {
+    opacity: 1;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+
+    #btnAdd,
+    #myBtn2,
+    .refresh,
+    .player,
+    .timer-texto,
+    .timer,
+    #timerCombined,
+    #timerCombined2 {
+        font-size: 1em !important;
+    }
+
+    .btnAddTransaction {
+        padding-top: 30px;
+    }
+    .contentModalAdd {
+        padding-top: 30px !important;
+    }
+}
+
+@media (max-width: 590px) {
+    .contentModalAdd {
+        padding-top: 30px !important;
+        min-width: 400px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .btnAddTransaction {
+        padding-top: 40px; /* Location of the box */
+    }
+    .contentModalAdd {
+        padding-top: 30px !important;
+        min-width: 300px;
+    }
+
+}
