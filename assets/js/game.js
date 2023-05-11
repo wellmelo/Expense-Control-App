@@ -94,14 +94,14 @@ closeModalAdd.onclick = function () {
 cancelBtn.onclick = function() {
     modalAddTransaction.style.display = "none";
 }
-// Quando o usuário clica em qualquer lugar fora do modal, fecha o modal.
+/** Quando o usuário clica em qualquer lugar fora do ModalAdd, fecha o modal.
 window.onclick = function (event) {
     if (event.target == modalAddTransaction) {
         modalAddTransaction.style.display = 'none';
         const modalAddTransactionClickAudio = new Audio('/assets/audio/exit.mp3');
         modalAddTransactionClickAudio.play();
     }
-};
+};*/
 
 // Adiciona Audio no evento Hover do Botao Ranking
 btn2.addEventListener('mouseover', () => {
