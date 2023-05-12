@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Money | Transação</title>
+
+    <meta property="og:url" content="https://memorygame.wellmelo.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Memory Game - Dragon Ball Z" />
+    <meta property="og:description"
+        content="Memory game with Dragon Ball Z theme, have fun and share with your friends!" />
+    <meta property="og:image" itemprop="image" content="/assets/images/memory-game-dbz-wellmelo.jpg" />
+    <meta property="og:image:alt" content="Memory Game - Dragon Ball Z" />
+    <meta property="og:site_name" content="Well Melo - Desenvolvedor Web" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="/assets/css/transaction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <main class="conteudo">
+        <header class="headPai">
+
+            <div class="headLeft">
+                <div class="headLeftUm">
+                    <div class="nick">SmartMoney</div>
+                </div>
+
+                <!-- <div class="headLeftDois">
+                    <button id="myBtn2"><i class="fa fa-trophy" aria-hidden="true"></i> RANKING</button>
+                </div> -->
+            </div>
+
+
+            <div class="headRight">
+                <div class="headRightUm">
+                    <div class="timer-texto"></div>
+                </div>
+                <div class="headRightDois">
+                    <button onClick="window.location.href='/pages/home'" class="refresh">HOME</button>
+                </div>
+            </div>
+        </header>
+
+        <form class="login-form">
+
+            <span><b>Add</b> new <b>Transaction</b>
+                <hr>
+            </span>
+
+            <div class="form-field">
+                <div><label>Transações <span>*</span></label></div>
+                <input type="radio" name="type" checked id="expense">
+                <label for="expense">Despesa</label>
+                <input type="radio" name="type" id="income">
+                <label for="income">Receita</label>
+            </div>
+
+            <div class="form-field">
+                <div><label>Data da transação <span>*</span></label></div>
+                <input type="date" onchange="onChangeDate()" id="date">
+                <div class="error" id="date-required-error">Data obrigatório/inválida.</div>
+            </div>
+
+            <div class="form-field">
+                <div><label>Moeda <span>*</span></label></div>
+                <select id="currency">
+                    <option value="BRL" selected>Real</option>
+                    <option value="USD">Dólar</option>
+                    <option value="EUR">Euro</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <div><label>Valor <span>*</span></label></div>
+                <input type="number" placeholder="Exemplo: 500" onchange="onChangeValue()" id="value">
+                <div class="error" id="value-required-error">Valor é obrigatório.</div>
+                <div class="error" id="value-less-or-equal-to-error">Valor deve ser maior que zero.</div>
+            </div>
+
+            <div class="form-field">
+                <div><label>Tipo de transação:</label></div>
+                <select onchange="onChangeTransactionType()" id="transaction-type">
+                    <option value="">- Selecione tipo de transação -</option>
+                    <option>Aluguel</option>
+                    <option>Serviços</option>
+                    <option>Alimentação</option>
+                    <option>Contas</option>
+                </select>
+                <div class="error" id="transaction-type-required-error">
+                    Tipo de transação obrigatório.
+                </div>
+            </div>
+
+            <div class="form-field">
+                <div><label>Descrição:</label></div>
+                <input type="text" placeholder="Digite uma descrição..." id="description">
+            </div>
+
+            <div class="form-field-button">
+                <button type="button" class="login_button" disabled id="save-button"
+                    onclick="saveTransaction()">Salvar</button>
+                <button type="button" class="login_button_cancel" onclick="cancelTransaction()">Cancelar</button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer class="footer_container">
+        <div class="footer_container_row">
+            <div class="footer_left">
+                Powered by
+                <a href="https://github.com/wellmelo" target="_blank"><i class="fa fa-github"
+                        aria-hidden="true"></i>Well Melo</a>
+                <a href="https://github.com/wellmelo/memory-game" target="_blank" class="footer_link"> <i
+                        class="fa fa-github" aria-hidden="true"></i>Repository GitHub</a>
+
+            </div>
+            <div class="footer_right">
+                <a class="whts"
+                    href="https://api.whatsapp.com/send?text=Olha que top esse jogo da memória com tema do Dragon Ball Z!! https://memorygame.wellmelo.com"
+                    target="_blank" data-action="share/whatsapp/share">
+                    <i class="fa fa-whatsapp"></i> Share on Whatsapp
+                </a>
+                <button type="button" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Exit
+                    game</button>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+
+<script src="/assets/js/firebase-init.js"></script>
+<script src="/assets/js/auth-guard.js"></script>
+<script src="/assets/js/loading.js"></script>
+<script src="/assets/js/transaction.js"></script>
+
+</html>

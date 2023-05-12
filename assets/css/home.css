@@ -3,11 +3,10 @@ main {
     flex-direction: column;
     width: 100%;
     min-width: 325px;
-    background-image: url('../images/wallpaper-dbz-wellmelo.png');
+    background-image: url('../images/smart-money-bg.jpg');
     background-size: cover;
-    min-height: 100vh;
+    height: 100vh;
     align-items: center;
-    justify-content: center;
     padding: 20px 20px 50px;
 }
 
@@ -15,7 +14,7 @@ main {
     display: flex;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 1000px;
     padding: 15px;
@@ -96,32 +95,22 @@ main {
     padding-right: 5px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 15px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0px auto;
-}
-
 /* INICIO CSS LISTA */
-.container-list {
+
+.list-transactions {
     width: 100%;
-    max-width: 1000px;
-    margin-bottom: 30px;
+    max-width: 600px;
+
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.37);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.container-list ol{
-    margin: auto;
-    max-width: 500px;
-    list-style-type: none;
-    padding: 0;
-}
 ol li {
     cursor: pointer;
     margin-bottom: 10px;
@@ -139,7 +128,23 @@ ol li.expense {
 ol li.income {
     border-left: 10px solid green;
     border-bottom: 1px solid green;
-} 
+}
+
+ol li:hover button.danger {
+    display: block;
+}
+
+button.danger {
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 2px 4px;
+    font-size: 12px;
+    margin: auto;
+    float: right;
+    display: none;
+}
 
 p {
     margin: 4px 0;

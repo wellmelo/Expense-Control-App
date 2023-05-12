@@ -1,5 +1,3 @@
-
-
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -17,16 +15,16 @@ main {
     flex-direction: column;
     width: 100%;
     min-width: 325px;
-    background-image: url('../images/wallpaper-dbz-wellmelo.png');
+    background-image: url('../images/smart-money-bg.jpg');
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     padding: 20px 20px 50px;
 }
 
 .login-form {
-    background: linear-gradient(-45deg, #6cc7fc, #f88787, #40ccc5, #06c283);
+    background: linear-gradient(-45deg, #0cd853, #baefcb, #baefcb, #0cd853);
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
 
