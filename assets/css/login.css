@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -21,10 +23,14 @@ main {
     align-items: center;
     justify-content: center;
     padding: 20px 20px 50px;
+    font-family: 'Inter', sans-serif;
 }
 
 .login-form {
-    background: linear-gradient(-45deg, #0cd853, #baefcb, #baefcb, #0cd853);
+    width: 100%;
+    max-width: 400px;
+
+    background: linear-gradient(-45deg, #fff, #baefcb, #fff, #0cd853);
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
 
@@ -32,7 +38,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px 40px;
+    padding: 50px 50px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -49,7 +55,13 @@ main {
 }
 
 .login_header img {
-    width: 230px;
+    max-width: 200px;
+}
+
+.login_header p {
+    text-align: center;
+    padding-top: 5px;
+    font-size: 0.9em;
 }
 
 .login-form h1 {
@@ -63,65 +75,76 @@ main {
     border-radius: 8px;
     color: #222;
     font-size: 1em;
+    font-weight: 300;
     margin-top: 10px;
-    max-width: 250px;
+    width: 100%;
     outline: none;
     padding: 10px 15px;
     width: 100%;
 }
 
 .login_button {
-    background-color: #a52a2a;
-    border: 2px solid #a52a2a;
+    background-color: #0cd853;
+    border: 2px solid #0cd853;
     padding: 10px 15px;
     border-radius: 8px;
     color: #fff;
     cursor: pointer;
     font-size: 1em;
     font-weight: 400;
-    max-width: 250px;
     width: 100%;
     margin-bottom: 10px;
 }
 
+.login_button:hover:enabled {
+    background-color: #0ab144;
+    border: 2px solid #0ab144;
+    animation: pulse2 1s infinite;
+    animation-timing-function: linear;
+}
+
 .login_button_pg_register {
     background-color: transparent;
-    border: 1px solid #a52a2a;
+    border: 1px solid #0cd853;
     padding: 10px 15px;
     border-radius: 8px;
-    color: #a52a2a;
+    color: #0cd853;
     cursor: pointer;
     font-size: 1em;
     font-weight: 400;
-    max-width: 250px;
     width: 100%;
 }
 
 .register_button {
-    background-color: #a52a2a;
-    border: 2px solid #a52a2a;
+    background-color: #0cd853;
+    border: 2px solid #0cd853;
     padding: 10px 15px;
     border-radius: 8px;
     color: #fff;
     cursor: pointer;
     font-size: 1em;
     font-weight: 400;
-    max-width: 250px;
     width: 100%;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
+.register_button:hover:enabled {
+    background-color: #0ab144;
+    border: 2px solid #0ab144;
+    animation: pulse2 1s infinite;
+    animation-timing-function: linear;
+}
+
 .register_button_pg_login {
     background-color: transparent;
-    border: 1px solid #a52a2a;
+    border: 1px solid #0cd853;
     padding: 10px 15px;
     border-radius: 8px;
-    color: #a52a2a;
+    color: #0cd853;
     cursor: pointer;
     font-size: 1em;
     font-weight: 400;
-    max-width: 250px;
     width: 100%;
 }
 
@@ -131,7 +154,7 @@ main {
     margin-bottom: 10px;
     padding-top: 10px;
     cursor: pointer;
-    color: #000;
+    color: #7e7e7e;
 }
 
 button:disabled {
@@ -142,4 +165,29 @@ button:disabled {
 button:enabled {
     opacity: 1;
     cursor: pointer;
+}
+
+.footer_login {
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.footer_login i {
+    padding-right: 3px;
+}
+
+.footer_login a {
+    text-decoration: none;
+    padding: 3px 10px;
+    border-radius: 25px;
+    text-align: center !important;
+    margin-left: 0px;
+    margin-right: 5px;
+    color: #1f1919;
+}
+
+.footer_login a:hover {
+    animation: pulse2 1s infinite;
+    animation-timing-function: linear;
 }

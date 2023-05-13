@@ -12,6 +12,18 @@ function isNewTransaction() {
     return getTransactionUid() ? false : true;
 }
 
+function logout() {
+    firebase
+        .auth()
+        .signOut()
+        .then(() => {
+            window.location.href = '../../';
+        })
+        .catch(() => {
+            alert('Erro ao fazer logout');
+        });
+}
+
 function findTransactionByUid(uid) {
     showLoading();
 

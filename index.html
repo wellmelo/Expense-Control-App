@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Money | Controle de finanças inteligente</title>
 
-    <meta property="og:url" content="https://moneysmart.wellmelo.com" />
+    <meta property="og:url" content="https://smartmoney.wellmelo.com" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Memory Game - Dragon Ball Z" />
+    <meta property="og:title" content="Smart Money | Controle de finanças inteligente" />
     <meta property="og:description"
-        content="Memory game with Dragon Ball Z theme, have fun and share with your friends!" />
-    <meta property="og:image" itemprop="image" content="/assets/images/memory-game-dbz-wellmelo.jpg" />
-    <meta property="og:image:alt" content="Memory Game - Dragon Ball Z" />
+        content="Smart Money é um app de gerenciamento de despesas. Cadastre, atualize e apague despesas do seu dia a dia." />
+    <meta property="og:image" itemprop="image" content="/assets/images/smart-money-thumbnail" />
+    <meta property="og:image:alt" content="Smart Money | Controle de finanças inteligente" />
     <meta property="og:site_name" content="Well Melo - Desenvolvedor Web" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets//images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="manifest" href="/assets/images/site.webmanifest">
+    <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="/assets/css/login.css">
     <link rel="stylesheet" href="/assets/css/global.css">
@@ -31,55 +34,44 @@
         <form class="login-form">
 
             <div class="login_header">
-                <h1>Smart Money</h1>
+                <img src="/assets/images/smart-money-logo.png" class="grow" class="responsive">
                 <p>Controle de finanças inteligente</p>
             </div>
 
             <!--<input type="text" name="name" id="name" onchange="validateFields" placeholder="You nick"
                 class="login_input">-->
 
-            <input type="email" name="email" id="email" oninput="onChangeEmail()" placeholder="You@email.com"
+            <input type="email" name="email" id="email" oninput="onChangeEmail()" placeholder="seu@email.com"
                 class="login_input">
             <div class="error" id="email-required-error">Email obrigatório!</div>
             <div class="error" id="email-invalid-error">Email é inválido!</div>
 
             <!--<p id="password-message" class="hide_password"><span>*</span>Minimum 6 characters.</p>-->
-            <input type="password" name="password" id="password" placeholder="Senha" class="login_input"
+            <input type="password" name="password" id="password" placeholder="senha" class="login_input"
                 oninput="onChangePassword()" />
             <div class="error" id="password-required-error">Senha obrigatório. Min. 6 caracteres.</div>
 
             <button type="button" class="recover_button" id="recover-password-button" disabled
                 onclick="recoverPassword()">
-                Recover password
+                Recuperar senha
             </button>
 
             <button type="button" class="login_button" id="login-button" disabled onclick="login()">
-                Play Now!
+                <i class="fa fa-sign-in" aria-hidden="true"></i> Entrar
             </button>
 
-            <button type="button" class="register_button_pg_login" onclick="register()">Register</button>
+            <button type="button" class="register_button_pg_login" onclick="register()">Registre-se</button>
 
         </form>
 
-    </main>
-    <footer class="footer_container">
-        <div class="footer_container_row centralize">
-
-            <div class="footer_left centralize">
-                Powered by
-                <a href="https://github.com/wellmelo" target="_blank"><i class="fa fa-github"
-                        aria-hidden="true"></i>Well Melo</a>
-                <a href="https://github.com/wellmelo/memory-game" target="_blank" class="footer_link"> <i
-                        class="fa fa-github" aria-hidden="true"></i>Repository GitHub</a>
-            </div>
-            <div class="footer_right">
-                <a class="whts" href="" target="_blank" data-action="share/whatsapp/share">
-                    <i class="fa fa-whatsapp"></i> Share on Whatsapp
-                </a>
-            </div>
-
+        <div class="footer_login">
+            Powered by
+            <a href="https://github.com/wellmelo" target="_blank"><i class="fa fa-github" aria-hidden="true"></i>
+                Well Melo Dev
+            </a>
         </div>
-    </footer>
+
+    </main>
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>

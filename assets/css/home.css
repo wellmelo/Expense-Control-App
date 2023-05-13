@@ -1,4 +1,6 @@
-main {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+/*main {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -8,17 +10,24 @@ main {
     height: 100vh;
     align-items: center;
     padding: 20px 20px 50px;
+}*/
+
+body {
+    background-image: url('../images/smart-money-bg.jpg');
+    font-family: 'Inter', sans-serif;
 }
 
 .headPai {
     display: flex;
+    margin: auto;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 1000px;
     padding: 15px;
-    margin: 0 0 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 5px;
 }
 
@@ -28,11 +37,20 @@ main {
     align-items: center;
     flex-direction: row;
     justify-content: flex-start;
+    max-height: 30px;
 }
 
-.headLeftUm {
-    display: flex;
-    justify-content: flex-start;
+.headLeft img {
+    max-width: 110px;
+    padding-top: 3px;
+
+    & {
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
 }
 
 .headRight {
@@ -65,11 +83,11 @@ main {
 .refresh {
     padding: 3px 10px;
     margin-left: 20px;
-    border-radius: 5px;
-    background-color: #a52a2a;
+    border-radius: 50px;
+    background-color: #0cd853;
     color: #fff;
     cursor: pointer;
-    animation: pulse 1s infinite;
+    animation: pulse2 1s infinite;
     animation-timing-function: linear;
 }
 
@@ -99,16 +117,26 @@ main {
 
 .list-transactions {
     width: 100%;
+    margin: auto;
     max-width: 600px;
-
     padding: 30px;
-
+    margin-bottom: 60px;
     background: rgba(255, 255, 255, 0.7);
     box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.37);
     backdrop-filter: blur(13.5px);
     -webkit-backdrop-filter: blur(13.5px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.list-transactions h1 {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.list-transactions hr {
+    border-bottom: 2px solid #0cd853;
+    margin-bottom: 20px;
 }
 
 ol li {
@@ -122,22 +150,37 @@ ol li:hover {
     opacity: 0.8;
 }
 ol li.expense {
-    border-left: 10px solid red;
-    border-bottom: 1px solid red;
+    border-left: 10px solid #a52a2a;
+    border-bottom: 2px solid #a52a2a;
 }
+ol li.expense:hover {
+    animation: pulse2red 1s infinite;
+    animation-timing-function: linear;
+}
+
 ol li.income {
-    border-left: 10px solid green;
-    border-bottom: 1px solid green;
+    border-left: 10px solid #0cd853;
+    border-bottom: 2px solid #0cd853;
+}
+ol li.income:hover {
+    animation: pulse2 1s infinite;
+    animation-timing-function: linear;
 }
 
 ol li:hover button.danger {
     display: block;
+    cursor: pointer;
+}
+
+ol li:hover button.danger:hover {
+    background-color: #a52a2a;
+    color: #fff;
 }
 
 button.danger {
     background-color: transparent;
-    color: red;
-    border: 1px solid red;
+    color: #a52a2a;
+    border: 1px solid #a52a2a;
     border-radius: 5px;
     padding: 2px 4px;
     font-size: 12px;
@@ -155,9 +198,16 @@ button.fab {
     border-radius: 50px;
     border: none;
     font-size: 24px;
-    box-shadow: 2px 2px 2px red;
+    box-shadow: 2px 2px 2px #0cd853;
     position: absolute;
     cursor: pointer;
+    animation: pulse2 1s infinite;
+    animation-timing-function: linear;
+}
+button.fab:hover {
+    background-color: #0cd853;
+    box-shadow: 2px 2px 2px #fff;
+    color: #fff;
 }
 button.fab.fixed {
     position: fixed;
@@ -190,7 +240,7 @@ button.fab.right {
     position: absolute;
     background-size: cover;
     background-position: center;
-    border: 2px solid #a52a2a;
+    border: 2px solid #0cd853;
     border-radius: 5px;
     transition: all 0.4s ease;
     backface-visibility: hidden;
@@ -232,7 +282,7 @@ button.rankButton {
     padding: 3px 10px;
     margin-left: 20px;
     border-radius: 5px;
-    background-color: #a52a2a;
+    background-color: #0cd853;
     color: #fff;
     cursor: pointer;
     animation: pulse 1s infinite;
@@ -262,7 +312,6 @@ button.rankButton:disabled {
 }
 
 table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
@@ -470,14 +519,33 @@ tr:nth-child(even) {
         background-color: #1f1919 !important;
     }
     main {
-        height: 84vh;
         margin: 0px;
-        padding: 0px;
+        padding: 20px;
     }
     .headPai {
         display: flex;
         padding: 7px;
         font-size: 0.8em;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .list-transactions {
+        padding: 30px 20px;
+        margin-bottom: 10px !important;
+    }
+
+    .list-transactions h1 {
+        font-size: 1.1em;
+    }
+
+    .login-form h1 {
+        font-size: 1.1em !important;
+    }
+
+    button.fab {
+        bottom: 60px !important;
+        right: 10px !important;
     }
 
     #myBtn2,
@@ -503,15 +571,9 @@ tr:nth-child(even) {
         flex: 55;
         display: flex;
         flex-direction: column;
-    }
-
-    .headLeftUm {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .headLeftDois {
-        margin-top: 5px;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
     }
 
     /* DIREITA TIMER */
@@ -530,15 +592,7 @@ tr:nth-child(even) {
         margin-top: 5px;
     }
 
-    #timerCombined {
-        font-size: 12px !important;
-    }
-
     .refresh {
         margin-right: 17px;
-    }
-
-    .tabelaRankingList {
-        font-size: 13px !important;
     }
 }
