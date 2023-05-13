@@ -179,6 +179,7 @@ button:enabled {
 
 .footer_login a {
     text-decoration: none;
+    background-color: #0ab144;
     padding: 3px 10px;
     border-radius: 25px;
     text-align: center !important;
@@ -190,4 +191,5 @@ button:enabled {
 .footer_login a:hover {
     animation: pulse2 1s infinite;
     animation-timing-function: linear;
+    background-color: #0cd853;
 }
