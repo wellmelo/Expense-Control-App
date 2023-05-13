@@ -149,6 +149,13 @@ ol li {
 }
 ol li:hover {
     opacity: 0.8;
+    & {
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
 }
 ol li.expense {
     border-left: 10px solid #a52a2a;
