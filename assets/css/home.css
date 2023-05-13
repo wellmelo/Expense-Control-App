@@ -149,6 +149,7 @@ ol li {
 }
 ol li:hover {
     opacity: 0.8;
+
     & {
         transition: all 0.2s ease-in-out;
 
@@ -161,19 +162,19 @@ ol li.expense {
     border-left: 10px solid #a52a2a;
     border-bottom: 2px solid #a52a2a;
 }
-ol li.expense:hover {
+/*ol li.expense:hover {
     animation: pulse2red 1s infinite;
     animation-timing-function: linear;
-}
+}*/
 
 ol li.income {
     border-left: 10px solid #0cd853;
     border-bottom: 2px solid #0cd853;
 }
-ol li.income:hover {
+/*ol li.income:hover {
     animation: pulse2 1s infinite;
     animation-timing-function: linear;
-}
+}*/
 
 ol li:hover button.danger {
     display: block;
