@@ -17,7 +17,7 @@ function logout() {
         .auth()
         .signOut()
         .then(() => {
-            window.location.href = '../../';
+            window.location.href = 'https://smartmoney.wellmelo.com/';
         })
         .catch(() => {
             alert('Erro ao fazer logout');
@@ -39,13 +39,14 @@ function findTransactionByUid(uid) {
                 toggleSaveButtonDisable();
             } else {
                 alert('Documento nao encontrado');
-                window.location.href = '../home';
+                window.location.href =
+                    'https://smartmoney.wellmelo.com/pages/home';
             }
         })
         .catch(() => {
             hideLoading();
             alert('Erro ao recuperar documento');
-            window.location.href = '../home';
+            window.location.href = 'https://smartmoney.wellmelo.com/pages/home';
         });
 }
 
@@ -85,7 +86,7 @@ function save(transaction) {
         .add(transaction)
         .then(() => {
             hideLoading();
-            window.location.href = '../home';
+            window.location.href = 'https://smartmoney.wellmelo.com/pages/home';
         })
         .catch(() => {
             hideLoading();
@@ -94,7 +95,7 @@ function save(transaction) {
 }
 
 function cancelTransaction() {
-    window.location.href = '../home';
+    window.location.href = 'https://smartmoney.wellmelo.com/pages/home';
 }
 
 function update(transaction) {
@@ -106,7 +107,7 @@ function update(transaction) {
         .update(transaction)
         .then(() => {
             hideLoading();
-            window.location.href = '../home';
+            window.location.href = 'https://smartmoney.wellmelo.com/pages/home';
         })
         .catch(() => {
             hideLoading();

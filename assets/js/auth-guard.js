@@ -1,5 +1,5 @@
-firebase.auth().onAuthStateChanged(user => {
+firebase.auth().onAuthStateChanged((user) => {
     if (!user) {
-        window.location.href = "../../";
+        window.location.href = 'https://smartmoney.wellmelo.com/';
     }
-})
+});

@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        window.location.href = 'pages/home';
+        window.location.href = 'https://smartmoney.wellmelo.com/pages/home';
     }
 });
 
@@ -21,7 +21,7 @@ function login() {
         .signInWithEmailAndPassword(form.email().value, form.password().value)
         .then(() => {
             hideLoading();
-            window.location.href = 'pages/home';
+            window.location.href = 'https://smartmoney.wellmelo.com/pages/home';
         })
         .catch((error) => {
             hideLoading();
@@ -30,7 +30,7 @@ function login() {
 }
 
 function register() {
-    window.location.href = 'pages/register';
+    window.location.href = 'https://smartmoney.wellmelo.com/pages/register';
 }
 
 function recoverPassword() {

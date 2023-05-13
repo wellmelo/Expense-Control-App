@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        window.location.href = '../../pages/home';
+        window.location.href = 'https://smartmoney.wellmelo.com/pages/home';
     }
 });
 
@@ -45,7 +45,7 @@ function register() {
         .createUserWithEmailAndPassword(email, password)
         .then(() => {
             hideLoading();
-            window.location.href = '/pages/home';
+            window.location.href = 'https://smartmoney.wellmelo.com/pages/home';
         })
         .catch((error) => {
             hideLoading();

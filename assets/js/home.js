@@ -3,7 +3,7 @@ function logout() {
         .auth()
         .signOut()
         .then(() => {
-            window.location.href = '../../';
+            window.location.href = 'https://smartmoney.wellmelo.com';
         })
         .catch(() => {
             alert('Erro ao fazer logout');
@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 function newTransaction() {
-    window.location.href = '../transaction';
+    window.location.href = 'https://smartmoney.wellmelo.com/pages/transaction';
 }
 
 function findTransactions(user) {
@@ -52,7 +52,8 @@ function addTransactionsToScreen(transactions) {
         li.id = transaction.uid;
         li.addEventListener('click', () => {
             window.location.href =
-                '../transaction/index.html?uid=' + transaction.uid;
+                'https://smartmoney.wellmelo.com/pages/transaction/index.html?uid=' +
+                transaction.uid;
         });
 
         const deleteButton = document.createElement('button');
