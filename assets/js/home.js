@@ -3,7 +3,7 @@ function logout() {
         .auth()
         .signOut()
         .then(() => {
-            window.location.href = 'https://smartmoney.wellmelo.com';
+            window.location.href = '/';
         })
         .catch(() => {
             alert('Erro ao fazer logout');
@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 function newTransaction() {
-    window.location.href = 'https://smartmoney.wellmelo.com/pages/transaction';
+    window.location.href = '/pages/transaction';
 }
 
 function findTransactions(user) {
@@ -57,7 +57,7 @@ function addTransactionsToScreen(transactions) {
         });
 
         const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = 'Remover';
+        deleteButton.innerHTML = 'X';
         deleteButton.classList.add('outline', 'danger');
         deleteButton.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -65,21 +65,58 @@ function addTransactionsToScreen(transactions) {
         });
         li.appendChild(deleteButton);
 
+        // Start Date
         const date = document.createElement('p');
-        date.innerHTML = formatDate(transaction.date);
-        li.appendChild(date);
+        date.textContent = formatDate(transaction.date);
+        date.classList.add('classdate');
 
+        const iconDate = document.createElement('i');
+        iconDate.classList.add('fa', 'fa-calendar');
+        iconDate.setAttribute('aria-hidden', 'true');
+
+        date.insertBefore(iconDate, date.firstChild);
+
+        li.appendChild(date);
+        // End Date
+
+        // Start Money
         const money = document.createElement('p');
         money.innerHTML = formatMoney(transaction.money);
+        money.classList.add('classmoney');
+
+        const iconMoney = document.createElement('i');
+        iconMoney.classList.add('fa', 'fa-money');
+        iconMoney.setAttribute('aria-hidden', 'true');
+
+        money.insertBefore(iconMoney, money.firstChild);
+
         li.appendChild(money);
 
+        // Start Type
         const type = document.createElement('p');
         type.innerHTML = transaction.transactionType;
+        type.classList.add('classtype');
+
+        const icontype = document.createElement('i');
+        icontype.classList.add('fa', 'fa-file-text-o');
+        icontype.setAttribute('aria-hidden', 'true');
+
+        type.insertBefore(icontype, type.firstChild);
+
         li.appendChild(type);
 
+        // Start Description
         if (transaction.description) {
             const description = document.createElement('p');
             description.innerHTML = transaction.description;
+            description.classList.add('classdescription');
+
+            const icondescription = document.createElement('i');
+            icondescription.classList.add('fa', 'fa-font');
+            icondescription.setAttribute('aria-hidden', 'true');
+
+            description.insertBefore(icondescription, description.firstChild);
+
             li.appendChild(description);
         }
 

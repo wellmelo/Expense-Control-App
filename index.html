@@ -38,15 +38,11 @@
                 <p>Controle de finanças inteligente</p>
             </div>
 
-            <!--<input type="text" name="name" id="name" onchange="validateFields" placeholder="You nick"
-                class="login_input">-->
-
-            <input type="email" name="email" id="email" oninput="onChangeEmail()" placeholder="seu@email.com"
+            <input type="email" name="email" id="email" onchange="onChangeEmail()" placeholder="seu@email.com"
                 class="login_input">
             <div class="error" id="email-required-error">Email obrigatório!</div>
             <div class="error" id="email-invalid-error">Email é inválido!</div>
 
-            <!--<p id="password-message" class="hide_password"><span>*</span>Minimum 6 characters.</p>-->
             <input type="password" name="password" id="password" placeholder="senha" class="login_input"
                 oninput="onChangePassword()" />
             <div class="error" id="password-required-error">Senha obrigatório. Min. 6 caracteres.</div>
