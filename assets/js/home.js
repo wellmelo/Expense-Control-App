@@ -65,6 +65,11 @@ function addTransactionsToScreen(transactions) {
         });
         li.appendChild(deleteButton);
 
+        const typeTransaction = document.createElement('div');
+        typeTransaction.innerHTML = '';
+        typeTransaction.classList.add('tipotransacao');
+        li.appendChild(typeTransaction);
+
         // Start Date
         const date = document.createElement('p');
         date.textContent = formatDate(transaction.date);

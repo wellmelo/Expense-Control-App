@@ -235,6 +235,30 @@ ol li.income i {
     border-bottom-right-radius: 5px;
 }
 
+ol li.expense .tipotransacao::before {
+    content: 'Despesa';
+    background-color: #a52a2a;
+    color: #fff;
+    padding: 0px 6px;
+    border-radius: 6px;
+    top: -18px;
+    left: 5%;
+    font-size: 13px;
+    position: relative;
+}
+
+ol li.income .tipotransacao::before {
+    content: 'Receita';
+    background-color: #0cd853;
+    color: #fff;
+    padding: 0px 6px;
+    border-radius: 6px;
+    top: -18px;
+    left: 5%;
+    font-size: 13px;
+    position: relative;
+}
+
 ol li:hover button.danger {
     display: block;
     cursor: pointer;
@@ -280,6 +304,7 @@ button.danger:hover::after {
 
 .classdate {
     font-weight: bold;
+    margin-top: -10px;
 }
 .classdescription i,
 .classtype i,
