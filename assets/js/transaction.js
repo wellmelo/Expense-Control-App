@@ -187,3 +187,34 @@ const form = {
     valueLessOrEqualToZeroError: () =>
         document.getElementById('value-less-or-equal-to-zero-error'),
 };
+
+/*
+// Obtém os elementos do DOM
+const expenseRadio = document.getElementById('expense');
+const incomeRadio = document.getElementById('income');
+const expenseSelect = document.getElementById('expense-select');
+const incomeSelect = document.getElementById('income-select');
+
+// Função para ocultar o select não selecionado
+function hideUnselectedSelect() {
+    if (expenseRadio.checked) {
+        incomeSelect.style.display = 'none'; // Oculta o select de receita
+    } else if (incomeRadio.checked) {
+        expenseSelect.style.display = 'none'; // Oculta o select de despesa
+    }
+}
+
+// Ovinte de evento para monitorar as alterações nos botões de rádio
+expenseRadio.addEventListener('change', function () {
+    expenseSelect.style.display = 'block'; // Exibe o select de despesa
+    incomeSelect.style.display = 'none'; // Oculta o select de receita
+});
+
+incomeRadio.addEventListener('change', function () {
+    expenseSelect.style.display = 'none'; // Oculta o select de despesa
+    incomeSelect.style.display = 'block'; // Exibe o select de receita
+});
+
+// Oculta o select não selecionado ao carregar a página
+hideUnselectedSelect();
+*/

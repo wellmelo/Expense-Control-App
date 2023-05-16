@@ -90,22 +90,54 @@
             </div>
 
             <div class="form-field">
-                <div><label>Tipo de transação:</label></div>
+                <div><label>Tipo de Despesa:</label></div>
                 <select onchange="onChangeTransactionType()" id="transaction-type">
-                    <option value="">- Selecione tipo de transação -</option>
-                    <option>Serviços</option>
+                    <option value="">- Selecione tipo de Transação -</option>
+                    <option disabled class="option-income">// TIPO DE RECEITA</option>
                     <option>Salário</option>
-                    <option>Contas</option>
+                    <option>Serviços</option>
+                    <option>Dinheiro extra</option>
+                    <option>Venda de bens</option>
+                    <option>Pensão</option>
+                    <option>Aposentadoria</option>
+                    <option>Mesada</option>
+                    <option>Dividendos</option>
+                    <option disabled class="option-expense"><b>// TIPO DE DESPESA</b></option>
+                    <option>Contas de casa</option>
+                    <option>Contas outros</option>
                     <option>Alimentação</option>
-                    <option>Transporte</option>
-                    <option>Estudos</option>
-                    <option>Diversão</option>
-                    <option>Vestuário</option>
+                    <option>Aluguel/condomínio</option>
+                    <option>Plano de saúde/odontológico</option>
+                    <option>Serviços por assinatura</option>
+                    <option>Combustível</option>
+                    <option>Compras parceladas</option>
+                    <option>Mensalidade da academia</option>
+                    <option>Mensalidade faculdade/curso</option>
+                    <option>Contas de lazer</option>
                 </select>
                 <div class="error" id="transaction-type-required-error">
                     Tipo de transação obrigatório.
                 </div>
             </div>
+            <!--
+            <div class="form-field" id="income-select">
+                <div><label>Tipo de Receita:</label></div>
+                <select onchange="onChangeTransactionType()" id="transaction-type">
+                    <option value="">- Selecione tipo de Receita -</option>
+                    <option>Salário</option>
+                    <option>Serviços</option>
+                    <option>Dinheiro extra</option>
+                    <option>Venda de bens</option>
+                    <option>Pensão</option>
+                    <option>Aposentadoria</option>
+                    <option>Mesada</option>
+                    <option>Dividendos</option>
+                </select>
+                <div class="error" id="transaction-type-required-error">
+                    Tipo de transação obrigatório.
+                </div>
+            </div>
+            -->
 
             <div class="form-field">
                 <div><label>Descrição:</label></div>
