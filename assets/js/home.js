@@ -154,7 +154,8 @@ function createTransactionListItem(transaction) {
     li.id = transaction.uid;
     li.addEventListener('click', () => {
         window.location.href =
-            '/pages/transaction/index.html?uid=' + transaction.uid;
+            'https://smartmoney.wellmelo.com/pages/transaction/index.html?uid=' +
+            transaction.uid;
     });
 
     return li;
