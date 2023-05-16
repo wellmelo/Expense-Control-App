@@ -22,18 +22,10 @@ function newTransaction() {
 
 function findTransactions(user) {
     showLoading();
-    firebase
-        .firestore()
-        .collection('transactions')
-        .where('user.uid', '==', user.uid)
-        .orderBy('date', 'desc')
-        .get()
-        .then((snapshot) => {
+    transactionService
+        .findByUser(user)
+        .then((transactions) => {
             hideLoading();
-            const transactions = snapshot.docs.map((doc) => ({
-                ...doc.data(),
-                uid: doc.id,
-            }));
             addTransactionsToScreen(transactions);
         })
         .catch((error) => {
@@ -45,25 +37,14 @@ function findTransactions(user) {
 
 function addTransactionsToScreen(transactions) {
     const orderedList = document.getElementById('transactions');
+    //// Adiciona Expense e Income
+    const expenseTotals = {};
+    const incomeTotals = {};
+    //////////////////////////////
 
     transactions.forEach((transaction) => {
-        const li = document.createElement('li');
-        li.classList.add(transaction.type);
-        li.id = transaction.uid;
-        li.addEventListener('click', () => {
-            window.location.href =
-                'https://smartmoney.wellmelo.com/pages/transaction/index.html?uid=' +
-                transaction.uid;
-        });
-
-        const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = 'X';
-        deleteButton.classList.add('outline', 'danger');
-        deleteButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            askRemoveTransaction(transaction);
-        });
-        li.appendChild(deleteButton);
+        const li = createTransactionListItem(transaction);
+        li.appendChild(createDeleteButton(transaction));
 
         const typeTransaction = document.createElement('div');
         typeTransaction.innerHTML = '';
@@ -125,8 +106,73 @@ function addTransactionsToScreen(transactions) {
             li.appendChild(description);
         }
 
+        const currencyCode = transaction.money.currency;
+
+        //// Adiciona Expense e Income
+        if (transaction.type === 'expense') {
+            if (!expenseTotals[currencyCode]) {
+                expenseTotals[currencyCode] = 0;
+            }
+            expenseTotals[currencyCode] += transaction.money.value;
+        } else if (transaction.type === 'income') {
+            if (!incomeTotals[currencyCode]) {
+                incomeTotals[currencyCode] = 0;
+            }
+            incomeTotals[currencyCode] += transaction.money.value;
+        }
+        ////////////////////////
+
         orderedList.appendChild(li);
     });
+
+    // Exibir os totais de Expense por moeda
+    for (const currencyCode in expenseTotals) {
+        const totalExpenseElement = document.getElementById(
+            'total-expense-' + currencyCode
+        );
+        const totalExpense = expenseTotals[currencyCode];
+        // Texto que aparece na Div
+        totalExpenseElement.innerHTML =
+            '<strong>' + currencyCode + ':</strong> ' + totalExpense.toFixed(2);
+    }
+
+    // Exibir os totais de Income por moeda
+    for (const currencyCode in incomeTotals) {
+        const totalIncomeElement = document.getElementById(
+            'total-income-' + currencyCode
+        );
+        const totalIncome = incomeTotals[currencyCode];
+        // Texto que aparece na Div
+        totalIncomeElement.innerHTML =
+            '<strong>' + currencyCode + ':</strong> ' + totalIncome.toFixed(2);
+    }
+}
+
+function createTransactionListItem(transaction) {
+    const li = document.createElement('li');
+    li.classList.add(transaction.type);
+    li.id = transaction.uid;
+    li.addEventListener('click', () => {
+        window.location.href =
+            '/pages/transaction/index.html?uid=' + transaction.uid;
+    });
+
+    return li;
+}
+
+function createDeleteButton(transaction) {
+    const li = createTransactionListItem(transaction);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'X';
+    deleteButton.classList.add('outline', 'danger');
+    deleteButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        askRemoveTransaction(transaction);
+    });
+    li.appendChild(deleteButton);
+
+    return deleteButton;
 }
 
 function askRemoveTransaction(transaction) {
@@ -139,11 +185,8 @@ function askRemoveTransaction(transaction) {
 function removeTransaction(transaction) {
     showLoading();
 
-    firebase
-        .firestore()
-        .collection('transactions')
-        .doc(transaction.uid)
-        .delete()
+    transactionService
+        .remove(transaction)
         .then(() => {
             hideLoading();
             document.getElementById(transaction.uid).remove();
@@ -161,4 +204,24 @@ function formatDate(date) {
 
 function formatMoney(money) {
     return `${money.currency} ${money.value.toFixed(2)}`;
+}
+
+// Função para somar os valores das classes .classmoney
+function sumTransactionValues() {
+    const moneyElements = document.getElementsByClassName('classmoney');
+    let total = 0;
+
+    for (let i = 0; i < moneyElements.length; i++) {
+        const text = moneyElements[i].textContent.trim();
+        const formattedText = text.replace('.', ',');
+        const value = parseFloat(
+            formattedText.replace(/[^0-9,-]+/g, '').replace(',', '.')
+        );
+
+        if (!isNaN(value)) {
+            total += value;
+        }
+    }
+
+    return total.toFixed(2);
 }

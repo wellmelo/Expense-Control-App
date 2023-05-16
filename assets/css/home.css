@@ -128,7 +128,70 @@ body {
 }
 
 /* INICIO CSS LISTA */
+.content-total {
+    display: flex;
+    margin-bottom: 10px;
+}
+.content_total_expense {
+    display: flex;
+    flex: 50;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #ffffff;
+    position: relative;
+}
+.content_total_income {
+    display: flex;
+    flex: 50;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #ffffff;
+    position: relative;
+}
+.info-expense,
+.info-income {
+    color: #fff;
+    padding: 5px 10px;
+    width: 100%;
+    font-size: 14px;
+    align-items: center;
+}
+.total-expense-one {
+    display: flex;
+    background-color: #a52a2a;
+    border-radius: 10px 0px 0px 0px;
+    text-align: center;
+    width: 100%;
+}
+.total-income-one {
+    display: flex;
+    background-color: #0cd853;
+    border-radius: 0px 10px 0px 0px;
+    text-align: center;
+    width: 100%;
+}
+.total-expense-two,
+.total-income-two {
+    display: flex;
+    flex-direction: row;
+}
+.total-expense,
+.total-income {
+    font-size: 14px;
+    padding: 5px 15px;
+}
+.total-income:first-child,
+.total-expense:first-child {
+    padding-left: 30px;
+}
+.total-income:last-child,
+.total-expense:last-child {
+    padding-right: 30px;
+}
 
+/*/////////////*/
 .list-transactions {
     width: 100%;
     margin: auto;
@@ -146,11 +209,7 @@ body {
 .list-transactions h1 {
     text-align: center;
     font-size: 1.4em;
-}
-
-.list-transactions hr {
-    border-bottom: 2px solid #0cd853;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 #transactions {
@@ -545,6 +604,38 @@ button.fab.right {
         font-size: 0.8em;
         margin-top: 0;
         margin-bottom: 20px;
+    }
+
+    .column-total {
+        width: 100%;
+    }
+
+    .content-total {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content_total_expense {
+        display: flex;
+        flex: 100;
+        margin-bottom: 10px;
+        border-radius: 10px 10px 10px 10px;
+        background-color: #fff;
+    }
+    .content_total_income {
+        display: flex;
+        flex: 100;
+        border-radius: 10px 10px 10px 10px;
+        background-color: #fff;
+    }
+
+    .total-expense-one {
+        background-color: #a52a2a;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .total-income-one {
+        background-color: #0cd853;
+        border-radius: 10px 10px 0px 0px;
     }
 
     .list-transactions {

@@ -51,10 +51,45 @@
         </header>
 
         <div class="list-transactions">
-            <h1><b>Lista</b> de <b>Transações</b>
-                <hr>
-            </h1>
+            <h1><b>Lista</b> de <b>Transações</b></h1>
+            <hr>
+
+            <div class="content-total">
+
+                <div class="content_total_expense">
+
+                    <div class="total-expense-one">
+                        <div class="info-expense">TOTAL DE DESPESAS</div>
+                        <div id="total-expense"></div>
+                    </div>
+
+                    <div class="total-expense-two">
+                        <div class="total-expense" id="total-expense-BRL"></div>
+                        <div class="total-expense" id="total-expense-USD"></div>
+                        <div class="total-expense" id="total-expense-EUR"></div>
+                    </div>
+
+                </div>
+
+                <div class="content_total_income">
+
+                    <div class="total-income-one">
+                        <div class="info-income">TOTAL DE RECEITAS</div>
+                        <div id="total-income"></div>
+                    </div>
+
+                    <div class="total-income-two">
+                        <div class="total-income" id="total-income-BRL"></div>
+                        <div class="total-income" id="total-income-USD"></div>
+                        <div class="total-income" id="total-income-EUR"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
             <ol id="transactions"></ol>
+
         </div>
 
     </main>
@@ -89,6 +124,7 @@
 <script src="/assets/js/firebase-init.js"></script>
 <script src="/assets/js/auth-guard.js"></script>
 <script src="/assets/js/loading.js"></script>
+<script src="/assets/services/transaction.service.js"></script>
 <script src="/assets/js/home.js"></script>
 <script src="/assets/js/transaction.js"></script>
 
