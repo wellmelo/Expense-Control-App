@@ -655,6 +655,23 @@ button.fab.right {
         width: 100%;
     }
 
+    ol li.expense {
+        position: relative;
+    }
+
+    ol li.income {
+        position: relative;
+    }
+
+    ol li button.danger {
+        display: inline-block;
+        cursor: pointer;
+        position: absolute;
+        right: 10px !important;
+        top: 10px !important;
+        opacity: 0.6;
+    }
+
     .login-form h1 {
         font-size: 1.1em !important;
     }
