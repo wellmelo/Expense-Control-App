@@ -130,7 +130,7 @@ body {
 /* INICIO CSS LISTA */
 .content-total {
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 .content_total_expense {
     display: flex;
@@ -216,7 +216,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    padding: 0;
+}
+
+ol {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 ol li {
@@ -225,13 +230,12 @@ ol li {
     border-radius: 10px;
     background: white;
     padding: 8px 16px 16px 0px;
-    margin: 15px;
-    width: 203px;
+    width: 210px;
     min-height: 150px;
-    display: inline-flex;
-    flex-direction: column;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px;
 }
+
 ol li:hover {
     opacity: 0.9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
