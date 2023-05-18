@@ -17,7 +17,7 @@ main {
     flex-direction: column;
     width: 100%;
     min-width: 325px;
-    background-image: url('../images/bg_right.jpg');
+    background-image: url('../images/bg-smart-money.png');
     background-size: cover;
     height: 100vh;
     align-items: center;
