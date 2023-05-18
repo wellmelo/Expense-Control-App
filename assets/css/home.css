@@ -21,8 +21,9 @@ body {
     display: flex;
     flex-direction: column;
 
-    background-image: url('../images/smart-money-bg.jpg');
+    background-image: url('../images/bg-smart-money.png');
     background-size: cover;
+
     font-family: 'Inter', sans-serif;
     min-width: 330px;
 }
@@ -36,11 +37,9 @@ body {
     margin: auto;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px 0 rgba(68, 1, 8, 0.1);
     width: 100%;
-    max-width: 1000px;
     padding: 15px;
-    margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
 }
@@ -130,7 +129,7 @@ body {
 /* INICIO CSS LISTA */
 .content-total {
     display: flex;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 .content_total_expense {
     display: flex;
@@ -140,6 +139,7 @@ body {
     border-radius: 10px 0px 0px 10px;
     background-color: #ffffff;
     position: relative;
+    box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.1);
 }
 .content_total_income {
     display: flex;
@@ -149,6 +149,7 @@ body {
     border-radius: 0px 10px 10px 0px;
     background-color: #ffffff;
     position: relative;
+    box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.1);
 }
 .info-expense,
 .info-income {
@@ -199,7 +200,7 @@ body {
     padding: 30px;
     margin-bottom: 60px;
     background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.37);
+    box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.1);
     backdrop-filter: blur(13.5px);
     -webkit-backdrop-filter: blur(13.5px);
     border-radius: 10px;
@@ -233,6 +234,7 @@ ol li {
     width: 210px;
     min-height: 150px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(68, 1, 8, 0.1);
     margin-bottom: 25px;
 }
 
@@ -540,6 +542,11 @@ button.fab.right {
         grid-template-columns: repeat(4, 1fr);
     }
 
+    .headPai {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
     #myBtn2,
     .refresh,
     .player,
@@ -596,11 +603,18 @@ button.fab.right {
 
 @media (max-width: 550px) {
     body {
-        background-color: #1f1919 !important;
+        background-color: #fff !important;
+        background-image: url('/assets/images/bg_left_top.jpg');
+        background-position: top left;
     }
+
+    .conteudo {
+        margin: 0 !important;
+    }
+
     main {
         margin: 0px;
-        padding: 20px;
+        padding: 0px;
     }
     .headPai {
         display: flex;

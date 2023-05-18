@@ -33,25 +33,26 @@
 
 <body>
 
+    <header class="headPai">
+
+        <div class="headLeft">
+            <div class="headLeftUm">
+                <a href="/pages/home"><img src="/assets/images/smart-money-logo.png" class="responsive"></a>
+            </div>
+        </div>
+
+
+        <div class="headRight">
+            <div class="headRightUm">
+                <div class="timer-texto"></div>
+            </div>
+            <div class="headRightDois">
+                <button onClick="window.location.href='/pages/home'" class="refresh">Transações</button>
+            </div>
+        </div>
+    </header>
+
     <main class="conteudo">
-        <header class="headPai">
-
-            <div class="headLeft">
-                <div class="headLeftUm">
-                    <a href="/pages/home"><img src="/assets/images/smart-money-logo.png" class="responsive"></a>
-                </div>
-            </div>
-
-
-            <div class="headRight">
-                <div class="headRightUm">
-                    <div class="timer-texto"></div>
-                </div>
-                <div class="headRightDois">
-                    <button onClick="window.location.href='/pages/home'" class="refresh">Transações</button>
-                </div>
-            </div>
-        </header>
 
         <form class="login-form">
 
@@ -154,25 +155,8 @@
 
     </main>
 
-    <footer class="footer_container">
-        <div class="footer_container_row">
-            <div class="footer_left">
-                Powered by: Well Melo
-                <!--<a href="https://produzsite.com" target="_blank"><i class="fa fa-rocket" aria-hidden="true"></i> Produz
-                    Site</a>-->
-            </div>
-            <div class="footer_right">
-                <a class="whts"
-                    href="https://api.whatsapp.com/send?text=Smart Money é um Aplicativo para gestão de despesas! https://smartmoney.wellmelo.com"
-                    target="_blank" data-action="share/whatsapp/share">
-                    <i class="fa fa-whatsapp"></i> Compartilhe no Whatsapp
-                </a>
-                <button type="button" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>
-                    Sair
-                </button>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
+
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
@@ -184,5 +168,6 @@
 <script src="/assets/js/loading.js"></script>
 <script src="/assets/services/transaction.service.js"></script>
 <script src="/assets/js/transaction.js"></script>
+<script src="/assets/js/footer.js"></script>
 
 </html>
