@@ -21,8 +21,9 @@ body {
     display: flex;
     flex-direction: column;
 
-    background-image: url('../images/bg-smart-money.png');
-    background-size: cover;
+    /*background-image: url('../images/bg-smart-money.png');
+    background-size: cover;*/
+    background-color: #f2f2f2;
 
     font-family: 'Inter', sans-serif;
     min-width: 330px;
@@ -31,31 +32,28 @@ body {
 .conteudo {
     flex: 1;
 }
-
-.headPai {
-    display: flex;
-    margin: auto;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.6);
+.head {
+    background-color: #259647;
     box-shadow: 0 4px 10px 0 rgba(68, 1, 8, 0.1);
     width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+    min-height: 140px;
+}
+.head-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
 }
 
 .headLeft {
     flex: 50;
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: flex-start;
-    max-height: 30px;
 }
 
 .headLeft img {
     max-width: 110px;
-    padding-top: 3px;
 
     & {
         transition: all 0.2s ease-in-out;
@@ -69,127 +67,73 @@ body {
 .headRight {
     flex: 50;
     display: flex;
-    justify-content: end !important;
-    align-items: center;
-}
-
-.headRightUm {
-    display: flex;
     justify-content: flex-end;
-    align-items: flex-start;
 }
 
-#myBtn2 {
-    padding: 3px 10px;
-    cursor: pointer;
-    background-color: brown;
-    color: #fff;
-    border-radius: 5px;
-    margin-left: 100px !important;
-}
-
-#myBtn2:hover {
-    animation: pulse 1s infinite;
-    animation-timing-function: linear;
-}
-
-.refresh {
+.add-transaction {
     padding: 3px 10px;
     margin-left: 20px;
     border-radius: 50px;
     background-color: #0cd853;
     color: #fff;
     cursor: pointer;
-    animation: pulse2 1s infinite;
+    animation: pulseAdd 1s infinite;
     animation-timing-function: linear;
-}
-
-#myBtn2,
-.refresh,
-.player,
-.timer-texto,
-.timer,
-#timerCombined,
-#timerCombined2 {
     font-size: 1em;
 }
-.nick,
-.player,
-.timer-texto {
-    font-weight: 600;
-}
-.player {
-    max-width: 150px;
-}
-.nick,
-.timer-texto {
-    padding-right: 5px;
-}
 
-/* INICIO CSS LISTA */
+/* INICIO TOTAL VALORES */
 .content-total {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
-.content_total_expense {
+.content_total_values {
     display: flex;
-    flex: 50;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px;
     background-color: #ffffff;
-    position: relative;
     box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.1);
 }
-.content_total_income {
+.total1,
+.total2,
+.total3 {
+    flex: 100;
+}
+.total2 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.column-total-left {
     display: flex;
-    flex: 50;
-    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    border-radius: 0px 10px 10px 0px;
-    background-color: #ffffff;
-    position: relative;
-    box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.1);
+    background-color: #333;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    min-height: 40px;
 }
-.info-expense,
-.info-income {
+.column-title {
+    display: flex;
     color: #fff;
     padding: 5px 10px;
-    width: 100%;
-    font-size: 14px;
-    align-items: center;
+    font-size: 1em;
 }
-.total-expense-one {
-    display: flex;
-    background-color: #a52a2a;
-    border-radius: 10px 0px 0px 0px;
-    text-align: center;
-    width: 100%;
+.column-icon i {
+    font-size: 1.3em;
+    padding: 5px;
+    color: #fff;
 }
-.total-income-one {
-    display: flex;
-    background-color: #0cd853;
-    border-radius: 0px 10px 0px 0px;
-    text-align: center;
-    width: 100%;
-}
-.total-expense-two,
-.total-income-two {
+
+.column-total-right {
     display: flex;
     flex-direction: row;
+    height: 50px;
+    align-items: center;
 }
-.total-expense,
-.total-income {
-    font-size: 14px;
-    padding: 5px 15px;
-}
-.total-income:first-child,
-.total-expense:first-child {
-    padding-left: 30px;
-}
-.total-income:last-child,
-.total-expense:last-child {
-    padding-right: 30px;
+.total-number {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 /*/////////////*/
@@ -197,131 +141,133 @@ body {
     width: 100%;
     margin: auto;
     max-width: 1000px;
-    padding: 30px;
+    margin-top: -60px;
     margin-bottom: 60px;
-    background: rgba(255, 255, 255, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    /*background: rgba(255, 255, 255, 0.7);
     box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.1);
-    backdrop-filter: blur(13.5px);
-    -webkit-backdrop-filter: blur(13.5px);
-    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);*/
+    border-radius: 10px;
 }
 
 .list-transactions h1 {
     text-align: center;
-    font-size: 1.4em;
-    padding-bottom: 10px;
+    font-size: 1.5em;
+    margin-top: -30px;
+    padding-bottom: 30px;
+    color: #fff;
 }
 
-#transactions {
+.title-fields {
     display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+    background-color: #333;
+    border-radius: 10px 10px 0 0;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+}
+.title-date {
+    flex: 14;
+    padding-left: 30px;
+}
+.title-value {
+    flex: 13;
+}
+.title-type {
+    flex: 24;
+    padding-left: 10px;
+}
+.title-description {
+    flex: 30;
+    padding-left: 10px;
+}
+
+ol li.expense i {
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 3px;
+    font-size: 0em;
+    border-radius: 20px;
 }
 
 ol {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: block;
 }
 
 ol li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    background-color: white;
     cursor: pointer;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background: white;
-    padding: 8px 16px 16px 0px;
-    width: 210px;
-    min-height: 150px;
+    padding: 10px 0;
+    width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(68, 1, 8, 0.1);
-    margin-bottom: 25px;
+    transition: all 0.3s ease-in-out;
+}
+ol li:nth-child(even) {
+    background-color: #f5f5f5; /* Cor para as linhas pares */
+}
+ol li:last-child {
+    border-radius: 0 0 10px 10px;
 }
 
 ol li:hover {
     opacity: 0.9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-
+    border-radius: 10px;
     & {
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.04);
         }
     }
 }
-ol li.expense {
-    border-bottom: 5px solid #a52a2a;
-}
-
-ol li .classdescription {
-    padding-left: 16px;
-}
-
-ol li .classdescription i {
-    margin-left: -16px;
-}
-
-ol li.expense i {
-    background-color: #a52a2a;
-    padding-left: 15px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin-right: 5px;
-    color: #fdd2d2;
-    font-size: 0.9em;
-
-    -webkit-border-top-right-radius: 5px;
-    -webkit-border-bottom-right-radius: 5px;
-    -moz-border-radius-topright: 5px;
-    -moz-border-radius-bottomright: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-ol li.income {
-    border-bottom: 5px solid #0cd853;
-}
 
 ol li.income i {
-    background-color: #0cd853;
-    padding-left: 15px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin-right: 5px;
-    color: #296a40;
-    font-size: 0.9em;
-
-    -webkit-border-top-right-radius: 5px;
-    -webkit-border-bottom-right-radius: 5px;
-    -moz-border-radius-topright: 5px;
-    -moz-border-radius-bottomright: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 3px;
+    font-size: 0em;
+    border-radius: 20px;
 }
 
 ol li.expense .tipotransacao::before {
-    content: 'Despesa';
+    content: '↓';
     background-color: #a52a2a;
     color: #fff;
-    padding: 0px 6px;
-    border-radius: 6px;
-    top: -18px;
-    left: 5%;
-    font-size: 13px;
-    position: relative;
+    border-radius: 20px;
+    padding: 0px 2px;
+    font-size: 15px;
+    top: 16px;
+    left: 5px;
+    position: absolute;
 }
 
 ol li.income .tipotransacao::before {
-    content: 'Receita';
+    content: '↑';
     background-color: #0cd853;
     color: #fff;
-    padding: 0px 6px;
-    border-radius: 6px;
-    top: -18px;
-    left: 5%;
-    font-size: 13px;
-    position: relative;
+    border-radius: 20px;
+    padding: 0px 2px;
+    font-size: 15px;
+    top: 16px;
+    left: 5px;
+    position: absolute;
+}
+
+ol li.income .classmoney {
+    color: #08742e;
+}
+
+ol li.expense .classmoney {
+    color: #771f1f;
 }
 
 ol li:hover button.danger {
@@ -369,15 +315,30 @@ button.danger:hover::after {
 
 .classdate {
     font-weight: bold;
-    margin-top: -10px;
+    margin-left: 40px;
+    margin-right: 10px;
+    width: 15%;
 }
+.classmoney {
+    width: 15%;
+    margin-right: 10px;
+}
+
+.classtype {
+    width: 25%;
+    margin-right: 30px;
+}
+.classdescription {
+    max-width: 310px;
+    width: 45%;
+}
+
 .classdescription i,
 .classtype i,
 .classdate i,
 .classmoney i {
-    padding-right: 5px;
+    display: none;
 }
-
 p {
     margin: 4px 0;
 }
@@ -388,15 +349,23 @@ button.fab {
     border: none;
     font-size: 24px;
     box-shadow: 2px 2px 2px #0cd853;
+    background-color: #0cd853;
+    color: #fff;
     position: absolute;
     cursor: pointer;
     animation: pulse2 1s infinite;
     animation-timing-function: linear;
 }
 button.fab:hover {
-    background-color: #0cd853;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(12, 216, 83, 1) 100%,
+        rgba(173, 255, 195, 1) 100%
+    );
     box-shadow: 2px 2px 2px #fff;
-    color: #fff;
+    color: #0cd853;
 }
 button.fab.fixed {
     position: fixed;
@@ -409,195 +378,132 @@ button.fab.right {
 }
 /* FIM CSS LISTA */
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    min-width: 325px;
-    border: 1px solid #888;
-    width: 40%;
-
-    text-align: center;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-.modal-content P {
-    max-width: 300px;
-    margin: auto;
-}
-
-.modal-content img {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    margin-top: 5px;
-}
-/* The Close Button */
-.close {
-    right: 10px;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Start style modal 2 */
-.modal2 {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
-    padding-top: 85px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-/* Modal Content Rank */
-.modal-content2 {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 40%;
-    min-width: 325px;
-    text-align: center;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-.modal-content2 hr {
-    width: 100%;
-    border-top: 1px solid red;
-    margin-bottom: 10px;
-}
-
-/* The Close Button */
-.close2 {
-    right: 10px;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-}
-
-.close2:hover,
-.close2:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (max-width: 800px) {
     .main {
         padding: 0px;
         margin: 0px;
     }
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+    .headLeft {
+        flex: 50;
+    }
+    .headRight {
+        flex: 50;
+    }
+    .total2 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .total-number {
+        font-size: 1.2em;
+    }
+    .column-title {
+        font-size: 0.9em;
+    }
+    .column-icon i {
+        font-size: 1.1em;
     }
 
-    .headPai {
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-
-    #myBtn2,
-    .refresh,
-    .player,
-    .timer-texto,
-    .timer,
-    #timerCombined,
-    #timerCombined2 {
+    .add-transaction {
         font-size: 1em !important;
     }
-
-    #myBtn2 {
-        margin-left: 15px !important;
-    }
-
-    .headRightUm {
+    #transactions {
         display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+    .title-fields {
+        display: none;
     }
 
-    /* ESQUERDA NICK */
-    .headLeft {
-        flex: 55;
+    .content-total {
+        margin-bottom: 10px;
     }
 
-    /* DIREITA TIMER */
-    .headRight {
-        flex: 45;
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    ol li {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background: white;
+        padding: 8px 16px 16px 0px;
+        width: 210px;
+        min-height: 150px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(68, 1, 8, 0.1);
+        margin-bottom: 25px;
+    }
+    ol li.expense i {
+        background-color: #a52a2a;
+        padding: 5px;
+        margin-left: 15px;
+        margin-right: 3px;
+        color: #fff;
+        font-size: 0.9em;
+        border-radius: 20px;
+    }
+    ol li.income i {
+        background-color: #0cd853;
+        padding: 5px;
+        margin-left: 15px;
+        margin-right: 3px;
+        color: #fff;
+        font-size: 0.9em;
+        border-radius: 20px;
+    }
+    ol li.expense .tipotransacao::before {
+        content: '↓';
+        color: #fff;
+        border-radius: 20px;
+        padding: 0px 2px;
+        font-size: 15px;
+        top: -5px;
+        left: -5px;
+        position: absolute;
+    }
+    ol li.income .tipotransacao::before {
+        content: '↑';
+        background-color: #0cd853;
+        color: #fff;
+        border-radius: 20px;
+        padding: 0px 2px;
+        font-size: 15px;
+        top: -5px;
+        left: -5px;
+        position: absolute;
+    }
+    .classdescription,
+    .classtype {
+        margin-left: 16px;
+        padding-right: 10px !important;
+    }
+    .classdescription i,
+    .classtype i {
+        margin-left: -1px !important;
+    }
+    .classdate {
+        margin-left: 0px;
+        width: 100%;
+    }
+    .classdescription,
+    .classtype,
+    .classdate,
+    .classmoney {
+        width: 100%;
     }
 
-    .modal {
-        padding-top: 100px;
-    }
-    .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80% !important;
-        padding-top: 30px !important;
-    }
-
-    /* MODAL RANK */
-
-    .modal-content2 {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80% !important;
-        padding-top: 30px !important;
+    .classdescription i,
+    .classtype i,
+    .classdate i,
+    .classmoney i {
+        padding-right: 5px;
+        display: inline;
     }
 }
 
@@ -616,57 +522,59 @@ button.fab.right {
         margin: 0px;
         padding: 0px;
     }
-    .headPai {
-        display: flex;
-        padding: 7px;
-        font-size: 0.8em;
-        margin-top: 0;
-        margin-bottom: 20px;
+    .column-total-left {
+        min-height: 30px;
+    }
+    .column-total-right {
+        height: 40px;
     }
 
-    .column-total {
-        width: 100%;
+    .total-number {
+        font-size: 0.9em;
+    }
+    .totaldiff {
+        font-size: 1.2em;
+    }
+
+    .column-title {
+        font-size: 0.9em;
+    }
+    .column-icon i {
+        font-size: 1.1em;
     }
 
     .content-total {
         display: flex;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+    .content_total_values {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px 0 rgba(68, 1, 8, 0.1);
     }
-
-    .content_total_expense {
-        display: flex;
-        flex: 100;
-        margin-bottom: 10px;
-        border-radius: 10px 10px 10px 10px;
-        background-color: #fff;
+    .content_total_values.total1 {
+        flex-basis: 50 !important;
+        margin-right: 10px;
     }
-    .content_total_income {
-        display: flex;
-        flex: 100;
-        border-radius: 10px 10px 10px 10px;
-        background-color: #fff;
+    .content_total_values.total2 {
+        flex-basis: 50 !important;
+        margin-right: 0;
     }
-
-    .total-expense-one {
-        background-color: #a52a2a;
-        border-radius: 10px 10px 0px 0px;
-    }
-    .total-income-one {
-        background-color: #0cd853;
-        border-radius: 10px 10px 0px 0px;
-    }
-
-    .list-transactions {
-        padding: 30px 20px;
-        margin-bottom: 10px !important;
-    }
-
-    .list-transactions h1 {
-        font-size: 1.1em;
+    .content_total_values.total3 {
+        flex-basis: 100% !important;
+        margin-top: 10px;
     }
 
     ol li {
         width: 100%;
+    }
+
+    .list-transactions h1 {
+        font-size: 1.1em;
     }
 
     ol li.expense {
@@ -686,60 +594,13 @@ button.fab.right {
         opacity: 0.6;
     }
 
-    .login-form h1 {
-        font-size: 1.1em !important;
-    }
-
     button.fab {
         bottom: 60px !important;
         right: 10px !important;
     }
 
-    #myBtn2,
-    .refresh,
-    .player,
-    .timer-texto,
-    .timer,
-    #timerCombined,
-    #timerCombined2 {
+    .add-transaction {
         font-size: 1em !important;
-    }
-
-    #myBtn2 {
-        margin-left: 0px !important;
-    }
-
-    .modal2 {
-        padding-top: 110px !important;
-    }
-
-    /* ESQUERDA NICK */
-    .headLeft {
-        flex: 55;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 40px;
-    }
-
-    /* DIREITA TIMER */
-    .headRight {
-        flex: 45;
-        display: flex;
-        flex-direction: column;
-    }
-    .headRightUm {
-        display: flex;
-        justify-content: space-around;
-    }
-    .headRightDois {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 5px;
-    }
-
-    .refresh {
         margin-right: 17px;
     }
 }

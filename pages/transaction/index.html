@@ -32,29 +32,21 @@
 </head>
 
 <body>
-
-    <header class="headPai">
-
-        <div class="headLeft">
-            <div class="headLeftUm">
-                <a href="/pages/home"><img src="/assets/images/smart-money-logo.png" class="responsive"></a>
+    <header class="head">
+        <div class="head-content">
+            <div class="headLeft">
+                <a href="/pages/home"><img src="/assets/images/smart-money-logo-white.png" class="responsive"></a>
             </div>
-        </div>
-
-
-        <div class="headRight">
-            <div class="headRightUm">
-                <div class="timer-texto"></div>
-            </div>
-            <div class="headRightDois">
-                <button onClick="window.location.href='/pages/home'" class="refresh">Transações</button>
+            <div class="headRight">
+                <button onClick="window.location.href='/pages/home'" class="add-transaction">
+                    Transações
+                </button>
             </div>
         </div>
     </header>
-
     <main class="conteudo">
 
-        <form class="login-form">
+        <form class="login-form" style="margin-top: -60px;">
 
             <h1><b>Adicionar</b> nova <b>Transação</b>
                 <hr>
@@ -78,8 +70,6 @@
                 <div><label>Moeda <span>*</span></label></div>
                 <select id="currency">
                     <option value="BRL" selected>Real</option>
-                    <option value="USD">Dólar</option>
-                    <option value="EUR">Euro</option>
                 </select>
             </div>
 

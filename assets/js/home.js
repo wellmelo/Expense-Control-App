@@ -35,7 +35,7 @@ function findTransactions(user) {
         });
 }
 
-function addTransactionsToScreen(transactions) {
+function addTransactionsToScreen(transactions, updateTotalDifferenceBRL) {
     const orderedList = document.getElementById('transactions');
     //// Adiciona Expense e Income
     const expenseTotals = {};
@@ -133,7 +133,7 @@ function addTransactionsToScreen(transactions) {
         const totalExpense = expenseTotals[currencyCode];
         // Texto que aparece na Div
         totalExpenseElement.innerHTML =
-            '<strong>' + currencyCode + ':</strong> ' + totalExpense.toFixed(2);
+            '<strong>R$:</strong> -' + totalExpense.toFixed(2);
     }
 
     // Exibir os totais de Income por moeda
@@ -144,7 +144,40 @@ function addTransactionsToScreen(transactions) {
         const totalIncome = incomeTotals[currencyCode];
         // Texto que aparece na Div
         totalIncomeElement.innerHTML =
-            '<strong>' + currencyCode + ':</strong> ' + totalIncome.toFixed(2);
+            '<strong>R$:</strong> ' + totalIncome.toFixed(2);
+    }
+
+    // Verificar se as divs de Expense e Income estão vazias e exibir "0.00" se necessário
+    const totalExpenseElementBRL = document.getElementById('total-expense-BRL');
+    if (totalExpenseElementBRL.innerHTML === '') {
+        totalExpenseElementBRL.innerHTML = '<strong>R$:</strong> 0.00';
+    }
+
+    const totalIncomeElementBRL = document.getElementById('total-income-BRL');
+    if (totalIncomeElementBRL.innerHTML === '') {
+        totalIncomeElementBRL.innerHTML = '<strong>R$:</strong> 0.00';
+    }
+
+    // Calcular e exibir a diferença entre despesa e renda
+    const totalExpenseBRL = expenseTotals['BRL'] || 0;
+    const totalIncomeBRL = incomeTotals['BRL'] || 0;
+    const differenceBRL = totalIncomeBRL - totalExpenseBRL;
+
+    const totalDifferenceElementBRL = document.getElementById(
+        'total-difference-BRL'
+    );
+
+    if (totalIncomeBRL !== 0 || totalExpenseBRL !== 0) {
+        let differenceText = '';
+        if (differenceBRL < 0) {
+            differenceText =
+                '<strong>R$:</strong> -' + Math.abs(differenceBRL).toFixed(2);
+        } else {
+            differenceText = '<strong>R$:</strong> ' + differenceBRL.toFixed(2);
+        }
+        totalDifferenceElementBRL.innerHTML = differenceText;
+    } else {
+        totalDifferenceElementBRL.innerHTML = '<strong>R$:</strong> 0.00';
     }
 }
 
@@ -191,6 +224,7 @@ function removeTransaction(transaction) {
         .then(() => {
             hideLoading();
             document.getElementById(transaction.uid).remove();
+            location.reload();
         })
         .catch((error) => {
             hideLoading();
@@ -205,24 +239,4 @@ function formatDate(date) {
 
 function formatMoney(money) {
     return `${money.currency} ${money.value.toFixed(2)}`;
-}
-
-// Função para somar os valores das classes .classmoney
-function sumTransactionValues() {
-    const moneyElements = document.getElementsByClassName('classmoney');
-    let total = 0;
-
-    for (let i = 0; i < moneyElements.length; i++) {
-        const text = moneyElements[i].textContent.trim();
-        const formattedText = text.replace('.', ',');
-        const value = parseFloat(
-            formattedText.replace(/[^0-9,-]+/g, '').replace(',', '.')
-        );
-
-        if (!isNaN(value)) {
-            total += value;
-        }
-    }
-
-    return total.toFixed(2);
 }

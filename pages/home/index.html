@@ -32,72 +32,60 @@
 
 <body>
     <main class="conteudo">
-        <header class="headPai">
-            <div class="headLeft">
-                <a href="/pages/home"><img src="/assets/images/smart-money-logo.png" class="responsive"></a>
-            </div>
-
-
-            <div class="headRight">
-                <div class="headRightUm">
-                    <div class="timer-texto"></div>
+        <header class="head">
+            <div class="head-content">
+                <div class="headLeft">
+                    <a href="/pages/home"><img src="/assets/images/smart-money-logo-white.png" class="responsive"></a>
                 </div>
-                <div class="headRightDois">
-                    <button onClick="window.location.href='/pages/transaction'" class="refresh">Adicionar
-                        Transação</button>
+                <div class="headRight">
+                    <button onClick="window.location.href='/pages/transaction'" class="add-transaction">
+                        Adicionar Transação
+                    </button>
                 </div>
             </div>
         </header>
         <div class="list-transactions">
-            <h1><b>Lista</b> de <b>Transações</b></h1>
-            <hr>
-
             <div class="content-total">
-
-                <div class="content_total_expense">
-
-                    <div class="total-expense-one">
-                        <div class="info-expense">TOTAL DE DESPESAS</div>
-                        <div id="total-expense"></div>
+                <div class="content_total_values total1">
+                    <div class="column-total-left">
+                        <div class="column-title">ENTRADAS</div>
+                        <div class="column-icon"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></div>
                     </div>
-
-                    <div class="total-expense-two">
-                        <div class="total-expense" id="total-expense-BRL"></div>
-                        <div class="total-expense" id="total-expense-USD"></div>
-                        <div class="total-expense" id="total-expense-EUR"></div>
+                    <div class="column-total-right">
+                        <div class="total-number" id="total-income-BRL"></div>
                     </div>
-
                 </div>
-
-                <div class="content_total_income">
-
-                    <div class="total-income-one">
-                        <div class="info-income">TOTAL DE RECEITAS</div>
-                        <div id="total-income"></div>
+                <div class="content_total_values total2">
+                    <div class="column-total-left">
+                        <div class="column-title">SAÍDAS</div>
+                        <div class="column-icon"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></div>
                     </div>
-
-                    <div class="total-income-two">
-                        <div class="total-income" id="total-income-BRL"></div>
-                        <div class="total-income" id="total-income-USD"></div>
-                        <div class="total-income" id="total-income-EUR"></div>
+                    <div class="column-total-right">
+                        <div class="total-number" id="total-expense-BRL"></div>
                     </div>
-
                 </div>
-
+                <div class="content_total_values total3">
+                    <div class="column-total-left">
+                        <div class="column-title">TOTAL</div>
+                        <div class="column-icon"><i class="fa fa-usd" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="column-total-right">
+                        <div class="total-number totaldiff" id="total-difference-BRL"></div>
+                    </div>
+                </div>
             </div>
-
+            <div class="title-fields">
+                <div class="title-date">Data</div>
+                <div class="title-value">Valor</div>
+                <div class="title-type">Tipo</div>
+                <div class="title-description">Descrição</div>
+            </div>
             <ol id="transactions"></ol>
-
         </div>
-
     </main>
-
     <button class="fab fixed bottom right" id="btnAdd" onclick="newTransaction()">+</button>
-
     <div id="footer-placeholder"></div>
-
 </body>
-
 <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
