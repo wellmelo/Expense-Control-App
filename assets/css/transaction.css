@@ -121,6 +121,52 @@ body {
     padding: 10px;
     width: -webkit-fill-available;
 }
+
+/* INICIO RADIOS */
+
+.content-radio {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.content-radio input[type='radio'] {
+    display: none;
+}
+
+.content-radio label {
+    display: block;
+    padding: 0px 5px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    padding-left: 25px;
+}
+
+.content-radio label:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.content-radio input[type='radio']:checked + label:before {
+    background-color: #259647;
+    border: 1px solid #259647;
+}
+.content-radio input[type='radio']:checked + label {
+    color: #259647;
+}
+
+/* FIM STYLE RADIOS */
+
 .form-field input[type='radio'] {
     width: auto;
 }
