@@ -277,12 +277,13 @@ button:enabled {
     font-weight: bold;
     padding-top: 10px;
 }
-.option-expense {
+label .option-expense {
     color: #fff;
     background-color: #a52a2a;
     border-radius: 5px;
+    padding-top: 10px;
 }
-.option-income {
+label.option-income {
     color: #fff;
     background-color: #0ab144;
     border-radius: 5px;

@@ -90,29 +90,31 @@
                 <div><label>Tipo de Despesa:</label></div>
                 <select onchange="onChangeTransactionType()" id="transaction-type">
                     <option value="">- Selecione tipo de Transação -</option>
-                    <option disabled class="option-income">// TIPO DE RECEITA</option>
-                    <option>Salário</option>
-                    <option>Serviços</option>
-                    <option>Dinheiro extra</option>
-                    <option>Venda de bens</option>
-                    <option>Pensão</option>
-                    <option>Aposentadoria</option>
-                    <option>Mesada</option>
-                    <option>Dividendos</option>
-                    <option>Outros...</option>
-                    <option disabled class="option-expense"><b>// TIPO DE DESPESA</b></option>
-                    <option>Contas de casa</option>
-                    <option>Contas outros</option>
-                    <option>Alimentação</option>
-                    <option>Aluguel/condomínio</option>
-                    <option>Plano de saúde/odontológico</option>
-                    <option>Serviços por assinatura</option>
-                    <option>Combustível</option>
-                    <option>Compras parceladas</option>
-                    <option>Mensalidade da academia</option>
-                    <option>Mensalidade faculdade/curso</option>
-                    <option>Contas de lazer</option>
-                    <option>Outros...</option>
+                    <optgroup class="option-income" label="🤑 TIPO DE RECEITA">
+                        <option>Salário</option>
+                        <option>Serviços</option>
+                        <option>Dinheiro extra</option>
+                        <option>Venda de bens</option>
+                        <option>Pensão</option>
+                        <option>Aposentadoria</option>
+                        <option>Mesada</option>
+                        <option>Dividendos</option>
+                        <option>Outros...</option>
+                    </optgroup>
+                    <optgroup class="option-expense" label="🔻 TIPO DE DESPESA">
+                        <option>Contas de casa</option>
+                        <option>Contas outros</option>
+                        <option>Alimentação</option>
+                        <option>Aluguel/condomínio</option>
+                        <option>Plano de saúde/odontológico</option>
+                        <option>Serviços por assinatura</option>
+                        <option>Combustível</option>
+                        <option>Compras parceladas</option>
+                        <option>Mensalidade da academia</option>
+                        <option>Mensalidade faculdade/curso</option>
+                        <option>Contas de lazer</option>
+                        <option>Outros...</option>
+                    </optgroup>
                 </select>
                 <div class="error" id="transaction-type-required-error">
                     Tipo de transação obrigatório.
